@@ -68,7 +68,7 @@ public class adminOptions extends javax.swing.JFrame {
         addservice.setText("ADD SERVICE");
 
         editservice.setFont(new java.awt.Font("DejaVu Sans", 1, 15)); // NOI18N
-        editservice.setText("EDIT SERVICE");
+        editservice.setText("DELETE SERVICE");
 
         jButton1.setText("PROCEED");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -104,7 +104,7 @@ public class adminOptions extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(87, 87, 87)
                         .addComponent(jLabel1)))
-                .addContainerGap(82, Short.MAX_VALUE))
+                .addContainerGap(70, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGap(100, 100, 100)
                 .addComponent(jButton1)

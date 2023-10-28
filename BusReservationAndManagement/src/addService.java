@@ -250,7 +250,11 @@ public class addService extends javax.swing.JFrame {
     }
         String qToInsert=String.format("insert into services (busid, date, time, start, end, seat,part,position, passenger, age, id) values('%s', '%s','%s','%s','%s', '%d', '%s','%s','', 0, '')", id, date, time, start, end, i,part,position);
         st.executeUpdate(qToInsert);
+        
     }
+    JOptionPane.showMessageDialog(this, "Service Added Successfully");
+        this.setVisible(false);
+        new adminOptions().setVisible(true);
         
     con.close();
 
