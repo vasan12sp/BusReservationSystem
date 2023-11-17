@@ -1,45 +1,25 @@
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.Statement;
+import javax.swing.JOptionPane;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 
-
-
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.Statement;
-import javax.swing.JOptionPane;
 /**
  *
  * @author vasan12sp
  */
-public class deleteBus extends javax.swing.JFrame {
+public class addCities extends javax.swing.JFrame {
 
     /**
-     * Creates new form deleteBus
+     * Creates new form addCities
      */
-    public deleteBus() {
+    public addCities() {
         initComponents();
-        try{
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con= DriverManager.getConnection("jdbc:mysql://localhost:3306/busbooking","root","");
-            Statement st = con.createStatement();
-            String q = "select busid from busdetails";
-            ResultSet rs=st.executeQuery(q);
-            while(rs.next()){
-                String busid=rs.getString("busid");
-                jComboBox1.addItem(busid);
-                
-            }
-            
-            con.close();
-            
-        }catch(Exception e){
-            System.out.println(e);
-            JOptionPane.showMessageDialog(this,"Exception Occured");
-            
-        }
     }
 
     /**
@@ -53,21 +33,23 @@ public class deleteBus extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        cityname = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
-        jComboBox1 = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("DejaVu Sans", 1, 36)); // NOI18N
-        jLabel1.setText("DELETE BUS");
+        jLabel1.setText("ADD SERVICE CITY");
 
-        jLabel2.setFont(new java.awt.Font("DejaVu Sans", 1, 24)); // NOI18N
-        jLabel2.setText("BUS ID");
+        jLabel2.setFont(new java.awt.Font("Cantarell", 1, 24)); // NOI18N
+        jLabel2.setText("CITY NAME");
+
+        cityname.setFont(new java.awt.Font("Cantarell", 0, 24)); // NOI18N
 
         jButton1.setFont(new java.awt.Font("Cantarell", 1, 24)); // NOI18N
-        jButton1.setText("DELETE");
+        jButton1.setText("ADD");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -75,19 +57,18 @@ public class deleteBus extends javax.swing.JFrame {
         });
 
         jButton2.setFont(new java.awt.Font("Cantarell", 1, 24)); // NOI18N
-        jButton2.setText("EXIT");
-
-        jButton3.setFont(new java.awt.Font("Cantarell", 1, 24)); // NOI18N
-        jButton3.setText("GO BACK");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        jButton2.setText("GO BACK");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                jButton2ActionPerformed(evt);
             }
         });
 
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+        jButton3.setFont(new java.awt.Font("Cantarell", 1, 24)); // NOI18N
+        jButton3.setText("EXIT");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
+                jButton3ActionPerformed(evt);
             }
         });
 
@@ -98,78 +79,75 @@ public class deleteBus extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(133, 133, 133)
-                        .addComponent(jLabel2)
+                        .addGap(78, 78, 78)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(16, 16, 16)
-                                .addComponent(jLabel1))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(79, 79, 79)
-                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(jLabel2)
+                                .addGap(89, 89, 89)
+                                .addComponent(cityname, javax.swing.GroupLayout.PREFERRED_SIZE, 291, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(jButton1)
+                                .addGap(84, 84, 84)
+                                .addComponent(jButton2)
+                                .addGap(84, 84, 84)
+                                .addComponent(jButton3)
+                                .addGap(25, 25, 25))))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(92, 92, 92)
-                        .addComponent(jButton1)
-                        .addGap(90, 90, 90)
-                        .addComponent(jButton3)
-                        .addGap(88, 88, 88)
-                        .addComponent(jButton2)))
-                .addContainerGap(122, Short.MAX_VALUE))
+                        .addGap(164, 164, 164)
+                        .addComponent(jLabel1)))
+                .addContainerGap(98, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(29, 29, 29)
+                .addGap(33, 33, 33)
                 .addComponent(jLabel1)
-                .addGap(41, 41, 41)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel2)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(77, 77, 77)
+                .addGap(47, 47, 47)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cityname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2))
+                .addGap(46, 46, 46)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
                     .addComponent(jButton2)
                     .addComponent(jButton3))
-                .addContainerGap(94, Short.MAX_VALUE))
+                .addContainerGap(93, Short.MAX_VALUE))
         );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        new adminOptions().setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButton2ActionPerformed
+
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        String city=cityname.getText().toUpperCase();
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection con= DriverManager.getConnection("jdbc:mysql://localhost:3306/busbooking","root","");
             Statement st = con.createStatement();
-            String record= (String) jComboBox1.getSelectedItem();
-            if(record.equals("")){
-                JOptionPane.showMessageDialog(this,"No bus available to remove");
-            }else{
-                String q = String.format("delete from busdetails where busid = '%s'",record);
-                st.executeUpdate(q);
-                JOptionPane.showMessageDialog(this,"Removed Successfully");
-            
-                this.setVisible(false);
-                new adminOptions().setVisible(true);
-                con.close();
-            }
-            
+            String q = String.format("INSERT INTO servicecities (cities) VALUES('%s')", city);
+                        
+            st.executeUpdate(q);
+            JOptionPane.showMessageDialog(this,"Added Successfully");
+            this.setVisible(false);
+            new adminOptions().setVisible(true);
+            con.close();
         }catch(Exception e){
-            System.out.println(e);
+            System.out.println(e); 
+            JOptionPane.showMessageDialog(this,"Exception Occured");
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-        new adminOptions().setVisible(true);
-        this.setVisible(false);
+        System.exit(0);
     }//GEN-LAST:event_jButton3ActionPerformed
-
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -188,29 +166,29 @@ public class deleteBus extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(deleteBus.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(addCities.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(deleteBus.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(addCities.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(deleteBus.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(addCities.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(deleteBus.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(addCities.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new deleteBus().setVisible(true);
+                new addCities().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField cityname;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables

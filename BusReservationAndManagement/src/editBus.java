@@ -4,7 +4,8 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
-import javax.swing.table.DefaultTableModel;
+import javax.swing.SpinnerListModel;
+import limit.limitfolder.limitclass;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -22,6 +23,40 @@ public class editBus extends javax.swing.JFrame {
      */
     public editBus() {
         initComponents();
+        
+        priceTf.setDocument(new limitclass(5));
+        rowlTf.setDocument(new limitclass(2));
+        rowrTf.setDocument(new limitclass(2));
+        splTf.setDocument(new limitclass(1));
+        sprTf.setDocument(new limitclass(1));
+        buttonGroup1.add(radioac);
+        buttonGroup1.add(radiononac);
+        try{
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection con= DriverManager.getConnection("jdbc:mysql://localhost:3306/busbooking","root","");
+            Statement st = con.createStatement();
+            String q = "select cities from servicecities";
+            ResultSet rs=st.executeQuery(q);
+            while(rs.next()){
+                String city=rs.getString("cities");
+                jComboBox1.addItem(city);
+                jComboBox2.addItem(city);
+            }
+            String q2 = "select busid from busdetails";
+            ResultSet rs2=st.executeQuery(q2);
+            while(rs2.next()){
+                String busid=rs2.getString("busid");
+                jComboBox3.addItem(busid);
+                
+            }
+            
+            con.close();
+            
+        }catch(Exception e){
+            System.out.println(e);
+            JOptionPane.showMessageDialog(this,"Exception Occured");
+            
+        }
     }
 
     /**
@@ -33,16 +68,13 @@ public class editBus extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
         jLabel1 = new javax.swing.JLabel();
-        busIdTf = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        startTf = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        endTf = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         priceTf = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
-        acTf = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         rowlTf = new javax.swing.JTextField();
         sprTf = new javax.swing.JTextField();
@@ -56,46 +88,65 @@ public class editBus extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        jComboBox2 = new javax.swing.JComboBox<>();
+        radioac = new javax.swing.JRadioButton();
+        radiononac = new javax.swing.JRadioButton();
+        jComboBox3 = new javax.swing.JComboBox<>();
+        String[] timeValues = new String[24 * 60];
+        for (int hour = 0; hour < 24; hour++) {
+            for (int minute = 0; minute < 60; minute++) {
+                timeValues[hour * 60 + minute] = String.format("%02d:%02d", hour, minute);
+            }
+        }
+
+        // Create a SpinnerListModel with the array of time values
+        SpinnerListModel spinnerModel = new SpinnerListModel(timeValues);
+        spinner = new javax.swing.JSpinner(spinnerModel);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setFont(new java.awt.Font("DejaVu Sans", 1, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("DejaVu Sans", 1, 36)); // NOI18N
         jLabel1.setText("EDIT BUS INFORMATION");
 
-        jLabel4.setFont(new java.awt.Font("DejaVu Sans", 1, 15)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("DejaVu Sans", 1, 24)); // NOI18N
         jLabel4.setText("ENDING POINT");
 
-        jLabel5.setFont(new java.awt.Font("DejaVu Sans", 1, 15)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("DejaVu Sans", 1, 24)); // NOI18N
         jLabel5.setText("PRICE IN RUPEES");
 
-        jLabel6.setFont(new java.awt.Font("DejaVu Sans", 1, 15)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("DejaVu Sans", 1, 24)); // NOI18N
         jLabel6.setText("AC OR NON-AC");
 
-        jLabel7.setFont(new java.awt.Font("DejaVu Sans", 1, 15)); // NOI18N
+        priceTf.setFont(new java.awt.Font("Cantarell", 0, 24)); // NOI18N
+
+        jLabel7.setFont(new java.awt.Font("DejaVu Sans", 1, 24)); // NOI18N
         jLabel7.setText("ROWS IN LEFT");
 
-        acTf.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                acTfActionPerformed(evt);
-            }
-        });
-
-        jLabel8.setFont(new java.awt.Font("DejaVu Sans", 1, 15)); // NOI18N
+        jLabel8.setFont(new java.awt.Font("DejaVu Sans", 1, 24)); // NOI18N
         jLabel8.setText("SEATS PER ROW");
 
-        jLabel9.setFont(new java.awt.Font("DejaVu Sans", 1, 15)); // NOI18N
+        rowlTf.setFont(new java.awt.Font("Cantarell", 0, 24)); // NOI18N
+
+        sprTf.setFont(new java.awt.Font("Cantarell", 0, 24)); // NOI18N
+
+        splTf.setFont(new java.awt.Font("Cantarell", 0, 24)); // NOI18N
+
+        jLabel9.setFont(new java.awt.Font("DejaVu Sans", 1, 24)); // NOI18N
         jLabel9.setText("ROWS IN RIGHT");
 
-        jLabel10.setFont(new java.awt.Font("DejaVu Sans", 1, 15)); // NOI18N
+        rowrTf.setFont(new java.awt.Font("Cantarell", 0, 24)); // NOI18N
+
+        jLabel10.setFont(new java.awt.Font("DejaVu Sans", 1, 24)); // NOI18N
         jLabel10.setText("SEATS PER ROW");
 
-        jLabel2.setFont(new java.awt.Font("DejaVu Sans", 1, 15)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("DejaVu Sans", 1, 24)); // NOI18N
         jLabel2.setText("BUS ID");
 
-        jLabel3.setFont(new java.awt.Font("DejaVu Sans", 1, 15)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("DejaVu Sans", 1, 24)); // NOI18N
         jLabel3.setText("STARTING POINT");
 
+        jButton1.setFont(new java.awt.Font("Cantarell", 1, 24)); // NOI18N
         jButton1.setText("EDIT");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -103,6 +154,7 @@ public class editBus extends javax.swing.JFrame {
             }
         });
 
+        jButton2.setFont(new java.awt.Font("Cantarell", 1, 24)); // NOI18N
         jButton2.setText("GO BACK");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -110,6 +162,7 @@ public class editBus extends javax.swing.JFrame {
             }
         });
 
+        jButton3.setFont(new java.awt.Font("Cantarell", 1, 24)); // NOI18N
         jButton3.setText("EXIT");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -117,85 +170,112 @@ public class editBus extends javax.swing.JFrame {
             }
         });
 
-        jLabel11.setFont(new java.awt.Font("DejaVu Sans", 1, 15)); // NOI18N
+        jLabel11.setFont(new java.awt.Font("DejaVu Sans", 1, 24)); // NOI18N
         jLabel11.setText("TIME");
+
+        radioac.setFont(new java.awt.Font("Cantarell", 1, 18)); // NOI18N
+        radioac.setText("AC");
+
+        radiononac.setFont(new java.awt.Font("Cantarell", 1, 18)); // NOI18N
+        radiononac.setText("NON AC");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(91, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(80, 80, 80))
             .addGroup(layout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel10)
-                    .addComponent(jLabel11)
-                    .addComponent(jLabel5)
-                    .addComponent(jLabel6)
-                    .addComponent(jLabel7)
-                    .addComponent(jLabel8)
-                    .addComponent(jLabel9)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel2)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton1)
-                        .addGap(64, 64, 64)))
-                .addGap(22, 22, 22)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(busIdTf, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
-                    .addComponent(startTf)
-                    .addComponent(endTf)
-                    .addComponent(priceTf)
-                    .addComponent(rowlTf)
-                    .addComponent(splTf)
-                    .addComponent(rowrTf)
-                    .addComponent(sprTf)
-                    .addComponent(acTf)
-                    .addComponent(jTextField1)
+                        .addGap(30, 30, 30)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel10)
+                            .addComponent(jLabel11)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel6)
+                            .addComponent(jLabel7)
+                            .addComponent(jLabel8)
+                            .addComponent(jLabel9)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel2)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jButton1)
+                                .addGap(64, 64, 64)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addGap(112, 112, 112)
+                                .addComponent(radioac)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(radiononac)
+                                .addGap(22, 22, 22))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(40, 40, 40)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jButton2)
+                                        .addGap(107, 107, 107)
+                                        .addComponent(jButton3)
+                                        .addGap(35, 35, 35))
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(priceTf, javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(jComboBox2, javax.swing.GroupLayout.Alignment.TRAILING, 0, 306, Short.MAX_VALUE)
+                                        .addComponent(jComboBox1, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jComboBox3, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(sprTf, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 306, Short.MAX_VALUE)
+                                        .addComponent(rowrTf, javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(splTf, javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(rowlTf, javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(spinner, javax.swing.GroupLayout.Alignment.TRAILING))))))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton3)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(126, 126, 126)
+                        .addComponent(jLabel1)))
+                .addContainerGap(93, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(38, 38, 38)
                 .addComponent(jLabel1)
-                .addGap(48, 48, 48)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(52, 52, 52)
+                        .addComponent(jLabel2))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(44, 44, 44)
+                        .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(busIdTf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel3)
-                    .addComponent(startTf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(endTf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(24, 24, 24)
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel5)
                     .addComponent(priceTf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
-                    .addComponent(acTf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel11)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                    .addComponent(radioac)
+                    .addComponent(radiononac))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(25, 25, 25)
+                        .addComponent(jLabel11))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(spinner)))
+                .addGap(25, 25, 25)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel7)
-                    .addComponent(rowlTf, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(20, 20, 20)
+                    .addComponent(rowlTf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(13, 13, 13)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel8)
                     .addComponent(splTf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -212,16 +292,12 @@ public class editBus extends javax.swing.JFrame {
                     .addComponent(jButton1)
                     .addComponent(jButton2)
                     .addComponent(jButton3))
-                .addContainerGap(18, Short.MAX_VALUE))
+                .addContainerGap(11, Short.MAX_VALUE))
         );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void acTfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_acTfActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_acTfActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
@@ -236,19 +312,26 @@ public class editBus extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        String busid=busIdTf.getText();
+        String busid=(String) jComboBox3.getSelectedItem();
         String start,end,ac,time;
         float price;
         int rowr,rowl,spr,spl;
-        start=startTf.getText();
-        end=endTf.getText();
-        ac=acTf.getText();
+        start=(String) jComboBox1.getSelectedItem();
+        end=(String) jComboBox2.getSelectedItem();
+        if(start.equals(end)){
+            JOptionPane.showMessageDialog(this,"Starting and ending point can't be same");
+        }else{
+             if(radioac.isSelected()){
+            ac="AC";
+        }else{
+            ac="NON AC";
+        }
         price=Float.parseFloat(priceTf.getText());
         rowr=Integer.parseInt(rowrTf.getText());
         rowl=Integer.parseInt(rowlTf.getText());
         spr=Integer.parseInt(sprTf.getText());
         spl=Integer.parseInt(splTf.getText());
-        time=jTextField1.getText();
+        time=(String) spinner.getValue();
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
             
@@ -256,7 +339,10 @@ public class editBus extends javax.swing.JFrame {
             Statement st = con.createStatement();
             String q=String.format("update busdetails set start='%s',end='%s',price='%.2f',ac='%s', time='%s',leftrow='%d',spl='%d',rightrow='%d',spr='%d' where busid='%s'",start,end,price,ac,time,rowl,spl,rowr,spr,busid);
             st.executeUpdate(q);
+            
             JOptionPane.showMessageDialog(this,"Updated Successfully");
+            new adminOptions().setVisible(true);
+            this.setVisible(false);
             con.close();
             
         }catch(Exception e){
@@ -264,6 +350,8 @@ public class editBus extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this,"Exception occured");
             this.setVisible(false);
         }
+        }
+       
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -302,12 +390,13 @@ public class editBus extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField acTf;
-    private javax.swing.JTextField busIdTf;
-    private javax.swing.JTextField endTf;
+    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> jComboBox2;
+    private javax.swing.JComboBox<String> jComboBox3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -319,12 +408,13 @@ public class editBus extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField priceTf;
+    private javax.swing.JRadioButton radioac;
+    private javax.swing.JRadioButton radiononac;
     private javax.swing.JTextField rowlTf;
     private javax.swing.JTextField rowrTf;
+    private javax.swing.JSpinner spinner;
     private javax.swing.JTextField splTf;
     private javax.swing.JTextField sprTf;
-    private javax.swing.JTextField startTf;
     // End of variables declaration//GEN-END:variables
 }

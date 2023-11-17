@@ -35,18 +35,23 @@ public class WELCOME extends javax.swing.JFrame {
         adminB = new javax.swing.JRadioButton();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setFont(new java.awt.Font("DejaVu Sans", 1, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("DejaVu Sans", 1, 36)); // NOI18N
         jLabel1.setText("XYZ BUS SERVICES");
 
+        newB.setFont(new java.awt.Font("Cantarell", 1, 24)); // NOI18N
         newB.setText("NEW USER");
 
+        registeredB.setFont(new java.awt.Font("Cantarell", 1, 24)); // NOI18N
         registeredB.setText("RESISTERED USER");
 
+        adminB.setFont(new java.awt.Font("Cantarell", 1, 24)); // NOI18N
         adminB.setText("ADMIN LOGIN");
 
+        jButton1.setFont(new java.awt.Font("Cantarell", 0, 24)); // NOI18N
         jButton1.setText("PROCEED");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -54,6 +59,7 @@ public class WELCOME extends javax.swing.JFrame {
             }
         });
 
+        jButton2.setFont(new java.awt.Font("Cantarell", 0, 24)); // NOI18N
         jButton2.setText("EXIT");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -65,45 +71,54 @@ public class WELCOME extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(633, Short.MAX_VALUE)
+                .addComponent(jLabel2)
+                .addGap(18, 18, 18))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(238, 238, 238)
+                        .addComponent(newB))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(203, 203, 203)
+                        .addComponent(registeredB))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(228, 228, 228)
+                        .addComponent(adminB))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(125, 125, 125)
+                        .addComponent(jButton1)
+                        .addGap(149, 149, 149)
+                        .addComponent(jButton2)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jLabel1)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(78, 78, 78)
-                            .addComponent(newB))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(58, 58, 58)
-                            .addComponent(registeredB))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(67, 67, 67)
-                            .addComponent(adminB))
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(jButton1)
-                            .addGap(83, 83, 83)
-                            .addComponent(jButton2)))
-                    .addGap(0, 0, Short.MAX_VALUE)))
+                    .addGap(0, 133, Short.MAX_VALUE)
+                    .addComponent(jLabel1)
+                    .addGap(0, 133, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 409, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(160, 160, 160)
+                .addComponent(jLabel2)
+                .addGap(32, 32, 32)
+                .addComponent(newB)
+                .addGap(41, 41, 41)
+                .addComponent(registeredB)
+                .addGap(48, 48, 48)
+                .addComponent(adminB)
+                .addGap(49, 49, 49)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton1)
+                    .addComponent(jButton2))
+                .addContainerGap(66, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 31, Short.MAX_VALUE)
+                    .addGap(0, 66, Short.MAX_VALUE)
                     .addComponent(jLabel1)
-                    .addGap(59, 59, 59)
-                    .addComponent(newB)
-                    .addGap(41, 41, 41)
-                    .addComponent(registeredB)
-                    .addGap(50, 50, 50)
-                    .addComponent(adminB)
-                    .addGap(73, 73, 73)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jButton1)
-                        .addComponent(jButton2))
-                    .addGap(0, 32, Short.MAX_VALUE)))
+                    .addGap(0, 425, Short.MAX_VALUE)))
         );
 
         pack();
@@ -170,6 +185,7 @@ public class WELCOME extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JRadioButton newB;
     private javax.swing.JRadioButton registeredB;
     // End of variables declaration//GEN-END:variables

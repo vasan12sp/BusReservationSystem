@@ -30,18 +30,21 @@ public class viewBus extends javax.swing.JFrame {
             int i=1;
             while(rs.next()){
                 
-                String busid,start,end,price,ac,rowl,sprl,rowr,sprr,time;
+                String busid,start,end,price,ac,time;
+                int sprr,sprl,rowr,rowl;
                 busid=rs.getString("busid");
                 start=rs.getString("start");
                 end=rs.getString("end");
                 price=String.valueOf(rs.getFloat("price"));
                 ac=rs.getString("ac");
                 time=rs.getString("time");
-                rowl=String.valueOf(rs.getInt("leftrow"));
-                sprl=String.valueOf(rs.getInt("spl"));
-                rowr=String.valueOf(rs.getInt("rightrow"));
-                sprr=String.valueOf(rs.getInt("spr"));
-                String data[]={String.valueOf(i),busid,start,end,price,ac,time,rowl,sprl,rowr,sprr};
+                rowl=rs.getInt("leftrow");
+                sprl=rs.getInt("spl");
+                rowr=rs.getInt("rightrow");
+                sprr=rs.getInt("spr");
+                int seats=(rowl*sprl)+(rowr*sprr);
+                String seatsStr=String.valueOf(seats);
+                String data[]={String.valueOf(i),busid,start,end,price,ac,time,seatsStr};
                 DefaultTableModel tb1Model=(DefaultTableModel)jTable1.getModel();
                 tb1Model.addRow(data);
                 i++;
@@ -70,19 +73,20 @@ public class viewBus extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setFont(new java.awt.Font("DejaVu Sans", 1, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("DejaVu Sans", 1, 36)); // NOI18N
         jLabel1.setText("BUS DETAILS");
 
+        jTable1.setFont(new java.awt.Font("Cantarell", 1, 15));
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "S.NO.", "BUS ID", "START", "END", "PRICE", "AC?", "TIME", "ROWS (L)", "SPR (L)", "ROWS (R)", "SPR (R)"
+                "S.NO.", "BUS ID", "START", "END", "PRICE", "AC or NON AC", "TIME", "SEATS"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -90,7 +94,16 @@ public class viewBus extends javax.swing.JFrame {
             }
         });
         jScrollPane1.setViewportView(jTable1);
+        if (jTable1.getColumnModel().getColumnCount() > 0) {
+            jTable1.getColumnModel().getColumn(1).setResizable(false);
+            jTable1.getColumnModel().getColumn(2).setResizable(false);
+            jTable1.getColumnModel().getColumn(3).setResizable(false);
+            jTable1.getColumnModel().getColumn(4).setResizable(false);
+            jTable1.getColumnModel().getColumn(5).setResizable(false);
+            jTable1.getColumnModel().getColumn(6).setResizable(false);
+        }
 
+        jButton1.setFont(new java.awt.Font("Cantarell", 1, 24)); // NOI18N
         jButton1.setText("GO BACK");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -98,6 +111,7 @@ public class viewBus extends javax.swing.JFrame {
             }
         });
 
+        jButton2.setFont(new java.awt.Font("Cantarell", 1, 24)); // NOI18N
         jButton2.setText("EXIT");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -135,7 +149,7 @@ public class viewBus extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
                     .addComponent(jButton2))
-                .addContainerGap(27, Short.MAX_VALUE))
+                .addContainerGap(71, Short.MAX_VALUE))
         );
 
         pack();

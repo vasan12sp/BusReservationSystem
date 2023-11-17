@@ -24,10 +24,52 @@ public class userLogged extends javax.swing.JFrame {
     /**
      * Creates new form userLogged
      */
-    public userLogged(String a) {
+    public userLogged(String a,String b) {
         initComponents();
+        String mobno=b;  //mobno is mobile number of user
+        Date currentDate = new Date();
+        Calendar calendar1 = Calendar.getInstance();
+        calendar1.setTime(currentDate);
+
+        // Add one day to the current date
+        calendar1.add(Calendar.DAY_OF_YEAR, 1);
+
+        // Get the date for tomorrow
+        Date tomorrow = calendar1.getTime();
         
+        jDateChooser1.getJCalendar().setMinSelectableDate(tomorrow);
+         
+
+        // Create a Calendar instance and set it to the current date
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(currentDate);
+
+        // Add one week to the current date
+        calendar.add(Calendar.WEEK_OF_YEAR, 1);
+
+        // Get the updated date
+        Date oneWeekLater = calendar.getTime();
+        jDateChooser1.setMaxSelectableDate(oneWeekLater);
         jLabel1.setText("Welcome "+a);
+        try{
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection con= DriverManager.getConnection("jdbc:mysql://localhost:3306/busbooking","root","");
+            Statement st = con.createStatement();
+            String q = "select cities from servicecities";
+            ResultSet rs=st.executeQuery(q);
+            while(rs.next()){
+                String city=rs.getString("cities");
+                jComboBox1.addItem(city);
+                jComboBox2.addItem(city);
+            }
+            
+            con.close();
+            
+        }catch(Exception e){
+            System.out.println(e);
+            JOptionPane.showMessageDialog(this,"Exception Occured");
+            
+        }
         
     }
 
@@ -43,9 +85,7 @@ public class userLogged extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        startTf = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        endTf = new javax.swing.JTextField();
         jDateChooser1 = new com.toedter.calendar.JDateChooser();
         jLabel5 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
@@ -58,30 +98,28 @@ public class userLogged extends javax.swing.JFrame {
         jTable1 = new javax.swing.JTable();
         jButton5 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        jComboBox2 = new javax.swing.JComboBox<>();
+        jLabel6 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("DejaVu Sans", 1, 24)); // NOI18N
 
-        jLabel2.setFont(new java.awt.Font("DejaVu Sans", 1, 24)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("DejaVu Sans", 1, 36)); // NOI18N
         jLabel2.setText("SEARCH FOR BUSSES");
 
-        jLabel3.setFont(new java.awt.Font("Cantarell", 1, 18)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Cantarell", 1, 24)); // NOI18N
         jLabel3.setText("STARTING POINT");
 
-        startTf.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                startTfActionPerformed(evt);
-            }
-        });
-
-        jLabel4.setFont(new java.awt.Font("Cantarell", 1, 18)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Cantarell", 1, 24)); // NOI18N
         jLabel4.setText("ENDING POINT");
 
-        jLabel5.setFont(new java.awt.Font("Cantarell", 1, 18)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Cantarell", 1, 24)); // NOI18N
         jLabel5.setText("JOURNEY DATE");
 
-        jButton1.setFont(new java.awt.Font("DejaVu Sans", 1, 18)); // NOI18N
+        jButton1.setFont(new java.awt.Font("DejaVu Sans", 1, 24)); // NOI18N
         jButton1.setText("SEARCH FOR BUS");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -89,6 +127,7 @@ public class userLogged extends javax.swing.JFrame {
             }
         });
 
+        jButton2.setFont(new java.awt.Font("Cantarell", 1, 24)); // NOI18N
         jButton2.setText("GO BACK");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -96,6 +135,7 @@ public class userLogged extends javax.swing.JFrame {
             }
         });
 
+        jButton3.setFont(new java.awt.Font("Cantarell", 1, 24)); // NOI18N
         jButton3.setText("EXIT");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -103,7 +143,13 @@ public class userLogged extends javax.swing.JFrame {
             }
         });
 
+        jButton4.setFont(new java.awt.Font("Cantarell", 1, 24)); // NOI18N
         jButton4.setText("MY UPCOMING JOURNEYS");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         notFound.setFont(new java.awt.Font("DejaVu Serif", 1, 18)); // NOI18N
 
@@ -125,6 +171,7 @@ public class userLogged extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jTable1);
 
+        jButton5.setFont(new java.awt.Font("Cantarell", 1, 24)); // NOI18N
         jButton5.setText("BOOK");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -132,12 +179,18 @@ public class userLogged extends javax.swing.JFrame {
             }
         });
 
+        jButton6.setFont(new java.awt.Font("Cantarell", 1, 24)); // NOI18N
         jButton6.setText("CANCEL");
         jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton6ActionPerformed(evt);
             }
         });
+
+        jLabel6.setFont(new java.awt.Font("Cantarell", 1, 24)); // NOI18N
+        jLabel6.setText("NUMBER OF PASSENGERS");
+
+        jTextField1.setFont(new java.awt.Font("Cantarell", 0, 24)); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -157,14 +210,13 @@ public class userLogged extends javax.swing.JFrame {
                                 .addGap(109, 109, 109)
                                 .addComponent(jButton1))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(startTf, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jButton2)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel4)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(endTf, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                                        .addGap(23, 23, 23)
+                                        .addComponent(jLabel4))))))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -173,28 +225,35 @@ public class userLogged extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(342, 342, 342)
                         .addComponent(notFound)))
-                .addContainerGap(214, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGap(53, 53, 53)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 818, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(78, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
                         .addComponent(jButton4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButton3)
-                        .addGap(96, 96, 96))))
+                        .addGap(96, 96, 96))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 818, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(33, Short.MAX_VALUE))))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(276, 276, 276)
+                        .addGap(256, 256, 256)
+                        .addComponent(jLabel2))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(274, 274, 274)
                         .addComponent(jButton5)
-                        .addGap(176, 176, 176)
+                        .addGap(178, 178, 178)
                         .addComponent(jButton6))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(333, 333, 333)
-                        .addComponent(jLabel2)))
+                        .addGap(107, 107, 107)
+                        .addComponent(jLabel6)
+                        .addGap(47, 47, 47)
+                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -207,19 +266,20 @@ public class userLogged extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
+                .addGap(14, 14, 14)
                 .addComponent(jLabel2)
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(startTf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4)
-                    .addComponent(endTf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jComboBox2, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel3)
+                        .addComponent(jLabel4)))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel5)
-                    .addComponent(jButton1)
-                    .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jDateChooser1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(34, 34, 34)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton4)
@@ -229,11 +289,15 @@ public class userLogged extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(notFound)
-                .addGap(36, 36, 36)
+                .addGap(30, 30, 30)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(31, 31, 31)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton5)
                     .addComponent(jButton6))
-                .addGap(228, 228, 228))
+                .addGap(176, 176, 176))
         );
 
         pack();
@@ -253,9 +317,12 @@ public class userLogged extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        String start=startTf.getText();
-        String end=endTf.getText();
-        Date date1=jDateChooser1.getDate();
+        String start=(String) jComboBox1.getSelectedItem();
+        String end=(String) jComboBox2.getSelectedItem();
+        if(start.equals(end)){
+            JOptionPane.showMessageDialog(this,"Starting point and ending point can't be same");
+        }else{
+            Date date1=jDateChooser1.getDate();
         SimpleDateFormat dateFormat=new SimpleDateFormat("dd-MM-YYYY");
         String date=dateFormat.format(date1);
         try{
@@ -263,12 +330,12 @@ public class userLogged extends javax.swing.JFrame {
             
             Connection con= DriverManager.getConnection("jdbc:mysql://localhost:3306/busbooking","root","");
             Statement st = con.createStatement();
-            String q=String.format("select * from services where date='%s'and start='%s'and end='%s'",date,start,end);
+            String q=String.format("select * from servicelist where date='%s'and start='%s'and end='%s'",date,start,end);
             ResultSet rs=st.executeQuery(q);
             if(rs.next()){
                 String busid,start1,end1,date5,time;
-                int i=1;
-                do{
+                
+                while(rs.next()){
                 busid=rs.getString("busid");
                 start1=rs.getString("start");
                 end1=rs.getString("end");
@@ -277,16 +344,9 @@ public class userLogged extends javax.swing.JFrame {
                 String data[]={busid,start1,end1,date5,time};
                 DefaultTableModel tb1Model=(DefaultTableModel)jTable1.getModel();
                 tb1Model.addRow(data);
-                if(i>=1){
-                    int previousRowIndex=i-1;
-                    String previousRowString = (String) tb1Model.getValueAt(previousRowIndex, 0);
-                    if(previousRowString.equals(busid)){
-                        continue;
-                    }
-                }
-                    i++;
                 
-            }while(rs.next());
+                
+            };
                 
             }else{
                 notFound.setText("Bus Not Found");
@@ -304,11 +364,9 @@ public class userLogged extends javax.swing.JFrame {
         }catch(Exception e){
             System.out.println(e);
         }
+        }
+        
     }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void startTfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startTfActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_startTfActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         // TODO add your handling code here:
@@ -319,6 +377,10 @@ public class userLogged extends javax.swing.JFrame {
         // TODO add your handling code here:
         
     }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -346,33 +408,35 @@ public class userLogged extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(userLogged.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        String userName="";
+        String userName="",mobno="";
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new userLogged(userName).setVisible(true);
+                new userLogged(userName,mobno).setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField endTf;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
+    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> jComboBox2;
     private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel notFound;
-    private javax.swing.JTextField startTf;
     // End of variables declaration//GEN-END:variables
 }

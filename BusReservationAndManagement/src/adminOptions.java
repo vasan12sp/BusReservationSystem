@@ -20,7 +20,7 @@ public class adminOptions extends javax.swing.JFrame {
         buttonGroup1.add(editbus);
         buttonGroup1.add(addservice);
         buttonGroup1.add(editservice);
-
+        buttonGroup1.add(addcity);
 
 
     }
@@ -45,31 +45,33 @@ public class adminOptions extends javax.swing.JFrame {
         editservice = new javax.swing.JRadioButton();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        addcity = new javax.swing.JRadioButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setFont(new java.awt.Font("DejaVu Sans", 1, 10)); // NOI18N
 
-        jLabel1.setFont(new java.awt.Font("DejaVu Sans", 1, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("DejaVu Sans", 1, 36)); // NOI18N
         jLabel1.setText("ADMINISTRATOR OPTIONS");
 
-        addbus.setFont(new java.awt.Font("DejaVu Sans", 1, 15)); // NOI18N
+        addbus.setFont(new java.awt.Font("DejaVu Sans", 1, 24)); // NOI18N
         addbus.setText("ADD BUS");
 
-        viewbus.setFont(new java.awt.Font("DejaVu Sans", 1, 15)); // NOI18N
+        viewbus.setFont(new java.awt.Font("DejaVu Sans", 1, 24)); // NOI18N
         viewbus.setText("VIEW BUS LIST");
 
-        removebus.setFont(new java.awt.Font("DejaVu Sans", 1, 15)); // NOI18N
+        removebus.setFont(new java.awt.Font("DejaVu Sans", 1, 24)); // NOI18N
         removebus.setText("REMOVE BUS");
 
-        editbus.setFont(new java.awt.Font("DejaVu Sans", 1, 15)); // NOI18N
+        editbus.setFont(new java.awt.Font("DejaVu Sans", 1, 24)); // NOI18N
         editbus.setText("EDIT BUS");
 
-        addservice.setFont(new java.awt.Font("DejaVu Sans", 1, 15)); // NOI18N
+        addservice.setFont(new java.awt.Font("DejaVu Sans", 1, 24)); // NOI18N
         addservice.setText("ADD SERVICE");
 
-        editservice.setFont(new java.awt.Font("DejaVu Sans", 1, 15)); // NOI18N
+        editservice.setFont(new java.awt.Font("DejaVu Sans", 1, 24)); // NOI18N
         editservice.setText("DELETE SERVICE");
 
+        jButton1.setFont(new java.awt.Font("Cantarell", 1, 24)); // NOI18N
         jButton1.setText("PROCEED");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -77,10 +79,19 @@ public class adminOptions extends javax.swing.JFrame {
             }
         });
 
+        jButton2.setFont(new java.awt.Font("Cantarell", 1, 24)); // NOI18N
         jButton2.setText("EXIT");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
+            }
+        });
+
+        addcity.setFont(new java.awt.Font("Cantarell", 1, 24)); // NOI18N
+        addcity.setText("ADD SERVICE CITIES");
+        addcity.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addcityActionPerformed(evt);
             }
         });
 
@@ -89,35 +100,38 @@ public class adminOptions extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(74, 74, 74)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(addbus)
-                            .addComponent(removebus)
-                            .addComponent(addservice))
-                        .addGap(102, 102, 102)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(editservice)
-                            .addComponent(editbus)
-                            .addComponent(viewbus)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(87, 87, 87)
-                        .addComponent(jLabel1)))
-                .addContainerGap(70, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
                 .addGap(100, 100, 100)
                 .addComponent(jButton1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton2)
                 .addGap(131, 131, 131))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(74, 74, 74)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel1)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(addbus)
+                                    .addComponent(removebus)
+                                    .addComponent(addservice))
+                                .addGap(102, 102, 102)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(editservice)
+                                    .addComponent(editbus)
+                                    .addComponent(viewbus)))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(201, 201, 201)
+                        .addComponent(addcity)))
+                .addContainerGap(64, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(26, 26, 26)
+                .addGap(49, 49, 49)
                 .addComponent(jLabel1)
-                .addGap(65, 65, 65)
+                .addGap(42, 42, 42)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(addbus)
                     .addComponent(viewbus))
@@ -129,11 +143,13 @@ public class adminOptions extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(addservice)
                     .addComponent(editservice))
-                .addGap(74, 74, 74)
+                .addGap(53, 53, 53)
+                .addComponent(addcity)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 63, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2)
-                    .addComponent(jButton1))
-                .addContainerGap(105, Short.MAX_VALUE))
+                    .addComponent(jButton1)
+                    .addComponent(jButton2))
+                .addGap(86, 86, 86))
         );
 
         pack();
@@ -162,11 +178,19 @@ public class adminOptions extends javax.swing.JFrame {
         }else if(editservice.isSelected()){
             new editService().setVisible(true);
             this.setVisible(false);
-        }else{
+        }else if(addcity.isSelected()){
+            new addCities().setVisible(true);
+            this.setVisible(false);
+        }
+        else{
             new deleteBus().setVisible(true);
             this.setVisible(false);
         }
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void addcityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addcityActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_addcityActionPerformed
 
     /**
      * @param args the command line arguments
@@ -205,6 +229,7 @@ public class adminOptions extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JRadioButton addbus;
+    private javax.swing.JRadioButton addcity;
     private javax.swing.JRadioButton addservice;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;

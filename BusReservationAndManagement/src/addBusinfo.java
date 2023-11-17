@@ -4,6 +4,8 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
+import javax.swing.SpinnerListModel;
+import limit.limitfolder.limitclass;
 
 
 /*
@@ -22,6 +24,34 @@ public class addBusinfo extends javax.swing.JFrame {
      */
     public addBusinfo() {
         initComponents();
+        
+        jTextField1.setDocument(new limitclass(10));
+        jTextField4.setDocument(new limitclass(5));
+        jTextField7.setDocument(new limitclass(2));
+        jTextField9.setDocument(new limitclass(2));
+        jTextField8.setDocument(new limitclass(1));
+        jTextField10.setDocument(new limitclass(1));
+        buttonGroup1.add(radioac);
+        buttonGroup1.add(radiononac);
+        try{
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection con= DriverManager.getConnection("jdbc:mysql://localhost:3306/busbooking","root","");
+            Statement st = con.createStatement();
+            String q = "select cities from servicecities";
+            ResultSet rs=st.executeQuery(q);
+            while(rs.next()){
+                String city=rs.getString("cities");
+                jComboBox1.addItem(city);
+                jComboBox2.addItem(city);
+            }
+            
+            con.close();
+            
+        }catch(Exception e){
+            System.out.println(e);
+            JOptionPane.showMessageDialog(this,"Exception Occured");
+            
+        }
     }
 
     /**
@@ -33,14 +63,11 @@ public class addBusinfo extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
         jLabel10 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
         jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
         jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
         jTextField7 = new javax.swing.JTextField();
         jTextField8 = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
@@ -57,12 +84,30 @@ public class addBusinfo extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         jTextField10 = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        jComboBox2 = new javax.swing.JComboBox<>();
+        radioac = new javax.swing.JRadioButton();
+        radiononac = new javax.swing.JRadioButton();
+        String[] timeValues = new String[24 * 60];
+        for (int hour = 0; hour < 24; hour++) {
+            for (int minute = 0; minute < 60; minute++) {
+                timeValues[hour * 60 + minute] = String.format("%02d:%02d", hour, minute);
+            }
+        }
+
+        // Create a SpinnerListModel with the array of time values
+        SpinnerListModel spinnerModel = new SpinnerListModel(timeValues);
+
+        // Create a JSpinner with the SpinnerListModel
+        // JSpinner timeSpinner = new JSpinner(spinnerModel);
+        startspin = new javax.swing.JSpinner(spinnerModel);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel10.setFont(new java.awt.Font("DejaVu Sans", 1, 15)); // NOI18N
+        jLabel10.setFont(new java.awt.Font("DejaVu Sans", 1, 24)); // NOI18N
         jLabel10.setText("SEATS PER ROW");
 
+        jButton2.setFont(new java.awt.Font("Cantarell", 1, 24)); // NOI18N
         jButton2.setText("EXIT");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -70,39 +115,44 @@ public class addBusinfo extends javax.swing.JFrame {
             }
         });
 
-        jTextField5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField5ActionPerformed(evt);
-            }
-        });
+        jTextField1.setFont(new java.awt.Font("Cantarell", 0, 24)); // NOI18N
 
-        jLabel1.setFont(new java.awt.Font("DejaVu Sans", 1, 24)); // NOI18N
+        jTextField4.setFont(new java.awt.Font("Cantarell", 0, 24)); // NOI18N
+
+        jTextField7.setFont(new java.awt.Font("Cantarell", 0, 24)); // NOI18N
+
+        jTextField8.setFont(new java.awt.Font("Cantarell", 0, 24)); // NOI18N
+
+        jLabel1.setFont(new java.awt.Font("DejaVu Sans", 1, 36)); // NOI18N
         jLabel1.setText("ADD BUS");
 
-        jLabel2.setFont(new java.awt.Font("DejaVu Sans", 1, 15)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("DejaVu Sans", 1, 24)); // NOI18N
         jLabel2.setText("BUS ID");
 
-        jLabel3.setFont(new java.awt.Font("DejaVu Sans", 1, 15)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("DejaVu Sans", 1, 24)); // NOI18N
         jLabel3.setText("STARTING POINT");
 
-        jLabel4.setFont(new java.awt.Font("DejaVu Sans", 1, 15)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("DejaVu Sans", 1, 24)); // NOI18N
         jLabel4.setText("ENDING POINT");
 
-        jLabel5.setFont(new java.awt.Font("DejaVu Sans", 1, 15)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("DejaVu Sans", 1, 24)); // NOI18N
         jLabel5.setText("PRICE IN RUPEES");
 
-        jLabel6.setFont(new java.awt.Font("DejaVu Sans", 1, 15)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("DejaVu Sans", 1, 24)); // NOI18N
         jLabel6.setText("AC OR NON-AC");
 
-        jLabel7.setFont(new java.awt.Font("DejaVu Sans", 1, 15)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("DejaVu Sans", 1, 24)); // NOI18N
         jLabel7.setText("ROWS IN LEFT");
 
-        jLabel8.setFont(new java.awt.Font("DejaVu Sans", 1, 15)); // NOI18N
+        jLabel8.setFont(new java.awt.Font("DejaVu Sans", 1, 24)); // NOI18N
         jLabel8.setText("SEATS PER ROW");
 
-        jLabel9.setFont(new java.awt.Font("DejaVu Sans", 1, 15)); // NOI18N
+        jTextField9.setFont(new java.awt.Font("Cantarell", 0, 24)); // NOI18N
+
+        jLabel9.setFont(new java.awt.Font("DejaVu Sans", 1, 24)); // NOI18N
         jLabel9.setText("ROWS IN RIGHT");
 
+        jButton1.setFont(new java.awt.Font("Cantarell", 1, 24)); // NOI18N
         jButton1.setText("ADD");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -110,6 +160,7 @@ public class addBusinfo extends javax.swing.JFrame {
             }
         });
 
+        jButton3.setFont(new java.awt.Font("Cantarell", 1, 24)); // NOI18N
         jButton3.setText("GO BACK");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -117,92 +168,110 @@ public class addBusinfo extends javax.swing.JFrame {
             }
         });
 
-        jLabel11.setFont(new java.awt.Font("DejaVu Sans", 1, 15)); // NOI18N
+        jTextField10.setFont(new java.awt.Font("Cantarell", 0, 24)); // NOI18N
+
+        jLabel11.setFont(new java.awt.Font("DejaVu Sans", 1, 24)); // NOI18N
         jLabel11.setText("TIME");
+
+        radioac.setFont(new java.awt.Font("Cantarell", 1, 18)); // NOI18N
+        radioac.setText("AC");
+
+        radiononac.setFont(new java.awt.Font("Cantarell", 1, 18)); // NOI18N
+        radiononac.setText("NON AC");
+
+        startspin.setMaximumSize(new java.awt.Dimension(24, 24));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(85, 85, 85)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jLabel4)
+                        .addComponent(jLabel3)
+                        .addComponent(jLabel5)
+                        .addComponent(jLabel6)
+                        .addComponent(jLabel2)
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(jButton1)
+                            .addGap(60, 60, 60))
+                        .addComponent(jLabel11))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel9)
+                            .addComponent(jLabel10)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel7)
+                            .addComponent(jLabel8))
+                        .addGap(5, 5, 5)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(85, 85, 85)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jLabel4)
-                                .addComponent(jLabel3)
-                                .addComponent(jLabel5)
-                                .addComponent(jLabel6)
-                                .addComponent(jLabel2)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(jButton1)
-                                    .addGap(60, 60, 60))
-                                .addComponent(jLabel11))
+                        .addGap(29, 29, 29)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(10, 10, 10)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel9)
-                                    .addComponent(jLabel10)))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel7)
-                                    .addComponent(jLabel8))
-                                .addGap(5, 5, 5)))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addGap(123, 123, 123)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(jTextField8, javax.swing.GroupLayout.DEFAULT_SIZE, 173, Short.MAX_VALUE)
-                                    .addComponent(jTextField7, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField6, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField5, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField4, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField3, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField2, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField9)
-                                    .addComponent(jTextField10)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(29, 29, 29)
                                 .addComponent(jButton3)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 101, Short.MAX_VALUE)
-                                .addComponent(jButton2))))
+                                .addGap(112, 112, 112)
+                                .addComponent(jButton2))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jComboBox1, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jComboBox2, javax.swing.GroupLayout.Alignment.TRAILING, 0, 280, Short.MAX_VALUE)
+                                .addComponent(jTextField10, javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jTextField9, javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jTextField8, javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jTextField7, javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jTextField4, javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(startspin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(241, 241, 241)
-                        .addComponent(jLabel1)))
-                .addContainerGap(89, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(122, 122, 122)
+                                .addComponent(radioac))
+                            .addComponent(jLabel1))
+                        .addGap(49, 49, 49)
+                        .addComponent(radiononac)))
+                .addContainerGap(135, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(31, 31, 31)
+                .addGap(35, 35, 35)
                 .addComponent(jLabel1)
-                .addGap(33, 33, 33)
+                .addGap(49, 49, 49)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel3)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel6)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(radioac)
+                        .addComponent(radiononac)))
+                .addGap(21, 21, 21)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(startspin, javax.swing.GroupLayout.DEFAULT_SIZE, 31, Short.MAX_VALUE)
                     .addComponent(jLabel11))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel7))
@@ -218,7 +287,7 @@ public class addBusinfo extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel10))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
+                .addGap(76, 76, 76)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
                     .addComponent(jButton3)
@@ -230,25 +299,34 @@ public class addBusinfo extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField5ActionPerformed
-
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         String busid,start,end,ac,time;
         float price;
         int rowl,spl,rowr,spr;
+        
         busid=jTextField1.getText();
-        start=jTextField2.getText();
-        end=jTextField3.getText();
-        ac=jTextField5.getText();
-        time=jTextField6.getText();
-        price=Float.parseFloat(jTextField4.getText());
+        start= (String) jComboBox1.getSelectedItem();
+        end= (String) jComboBox2.getSelectedItem();
+        if(start.equals(end)){
+            JOptionPane.showMessageDialog(this,"Starting and Ending cities can't be same");
+        }else{
+            if(radioac.isSelected()){
+            ac="AC";
+        }else{
+            ac="NON AC";
+        }
+        
+        time=(String)startspin.getValue();
+        if(jTextField4.getText().equals("")||jTextField7.getText().equals("")||jTextField8.getText().equals("")||jTextField9.getText().equals("")||jTextField10.getText().equals("")){
+            JOptionPane.showMessageDialog(this,"Text Fields can't be empty");
+        }else{
+            price=Float.parseFloat(jTextField4.getText());
         rowl=Integer.parseInt(jTextField7.getText());
         spl=Integer.parseInt(jTextField8.getText());
         rowr=Integer.parseInt(jTextField9.getText());
         spr=Integer.parseInt(jTextField10.getText());
+        
         
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -265,6 +343,10 @@ public class addBusinfo extends javax.swing.JFrame {
             System.out.println(e);
             JOptionPane.showMessageDialog(this,"Exception Occured");
         }
+        }
+        
+        }
+        
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -315,9 +397,12 @@ public class addBusinfo extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -331,13 +416,12 @@ public class addBusinfo extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField10;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField8;
     private javax.swing.JTextField jTextField9;
+    private javax.swing.JRadioButton radioac;
+    private javax.swing.JRadioButton radiononac;
+    private javax.swing.JSpinner startspin;
     // End of variables declaration//GEN-END:variables
 }
