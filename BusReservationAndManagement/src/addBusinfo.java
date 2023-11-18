@@ -27,10 +27,7 @@ public class addBusinfo extends javax.swing.JFrame {
         
         jTextField1.setDocument(new limitclass(10));
         jTextField4.setDocument(new limitclass(5));
-        jTextField7.setDocument(new limitclass(2));
-        jTextField9.setDocument(new limitclass(2));
-        jTextField8.setDocument(new limitclass(1));
-        jTextField10.setDocument(new limitclass(1));
+
         buttonGroup1.add(radioac);
         buttonGroup1.add(radiononac);
         try{
@@ -64,25 +61,17 @@ public class addBusinfo extends javax.swing.JFrame {
     private void initComponents() {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
-        jLabel10 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
         jTextField1 = new javax.swing.JTextField();
         jTextField4 = new javax.swing.JTextField();
-        jTextField7 = new javax.swing.JTextField();
-        jTextField8 = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jTextField9 = new javax.swing.JTextField();
-        jLabel9 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
-        jTextField10 = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox<>();
         jComboBox2 = new javax.swing.JComboBox<>();
@@ -104,9 +93,6 @@ public class addBusinfo extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel10.setFont(new java.awt.Font("DejaVu Sans", 1, 24)); // NOI18N
-        jLabel10.setText("SEATS PER ROW");
-
         jButton2.setFont(new java.awt.Font("Cantarell", 1, 24)); // NOI18N
         jButton2.setText("EXIT");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -118,10 +104,6 @@ public class addBusinfo extends javax.swing.JFrame {
         jTextField1.setFont(new java.awt.Font("Cantarell", 0, 24)); // NOI18N
 
         jTextField4.setFont(new java.awt.Font("Cantarell", 0, 24)); // NOI18N
-
-        jTextField7.setFont(new java.awt.Font("Cantarell", 0, 24)); // NOI18N
-
-        jTextField8.setFont(new java.awt.Font("Cantarell", 0, 24)); // NOI18N
 
         jLabel1.setFont(new java.awt.Font("DejaVu Sans", 1, 36)); // NOI18N
         jLabel1.setText("ADD BUS");
@@ -141,17 +123,6 @@ public class addBusinfo extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("DejaVu Sans", 1, 24)); // NOI18N
         jLabel6.setText("AC OR NON-AC");
 
-        jLabel7.setFont(new java.awt.Font("DejaVu Sans", 1, 24)); // NOI18N
-        jLabel7.setText("ROWS IN LEFT");
-
-        jLabel8.setFont(new java.awt.Font("DejaVu Sans", 1, 24)); // NOI18N
-        jLabel8.setText("SEATS PER ROW");
-
-        jTextField9.setFont(new java.awt.Font("Cantarell", 0, 24)); // NOI18N
-
-        jLabel9.setFont(new java.awt.Font("DejaVu Sans", 1, 24)); // NOI18N
-        jLabel9.setText("ROWS IN RIGHT");
-
         jButton1.setFont(new java.awt.Font("Cantarell", 1, 24)); // NOI18N
         jButton1.setText("ADD");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -167,8 +138,6 @@ public class addBusinfo extends javax.swing.JFrame {
                 jButton3ActionPerformed(evt);
             }
         });
-
-        jTextField10.setFont(new java.awt.Font("Cantarell", 0, 24)); // NOI18N
 
         jLabel11.setFont(new java.awt.Font("DejaVu Sans", 1, 24)); // NOI18N
         jLabel11.setText("TIME");
@@ -186,54 +155,40 @@ public class addBusinfo extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(85, 85, 85)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(jLabel4)
-                        .addComponent(jLabel3)
-                        .addComponent(jLabel5)
-                        .addComponent(jLabel6)
-                        .addComponent(jLabel2)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(jButton1)
-                            .addGap(60, 60, 60))
-                        .addComponent(jLabel11))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel9)
-                            .addComponent(jLabel10)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel7)
-                            .addComponent(jLabel8))
-                        .addGap(5, 5, 5)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(29, 29, 29)
+                        .addGap(85, 85, 85)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jButton3)
-                                .addGap(112, 112, 112)
-                                .addComponent(jButton2))
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jComboBox1, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jComboBox2, javax.swing.GroupLayout.Alignment.TRAILING, 0, 280, Short.MAX_VALUE)
-                                .addComponent(jTextField10, javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jTextField9, javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jTextField8, javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jTextField7, javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jTextField4, javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(startspin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                    .addGroup(layout.createSequentialGroup()
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel6)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel11))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(122, 122, 122)
-                                .addComponent(radioac))
-                            .addComponent(jLabel1))
-                        .addGap(49, 49, 49)
-                        .addComponent(radiononac)))
+                                .addGap(79, 79, 79)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jButton2)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(jComboBox1, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jComboBox2, javax.swing.GroupLayout.Alignment.TRAILING, 0, 280, Short.MAX_VALUE)
+                                        .addComponent(jTextField4, javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(startspin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(122, 122, 122)
+                                        .addComponent(radioac))
+                                    .addComponent(jLabel1))
+                                .addGap(49, 49, 49)
+                                .addComponent(radiononac))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(164, 164, 164)
+                        .addComponent(jButton1)
+                        .addGap(99, 99, 99)
+                        .addComponent(jButton3)))
                 .addContainerGap(135, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -271,28 +226,12 @@ public class addBusinfo extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(startspin, javax.swing.GroupLayout.DEFAULT_SIZE, 31, Short.MAX_VALUE)
                     .addComponent(jLabel11))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel8)
-                    .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel9))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel10))
-                .addGap(76, 76, 76)
+                .addGap(36, 36, 36)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
                     .addComponent(jButton3)
                     .addComponent(jButton2))
-                .addGap(30, 30, 30))
+                .addGap(62, 62, 62))
         );
 
         pack();
@@ -318,14 +257,12 @@ public class addBusinfo extends javax.swing.JFrame {
         }
         
         time=(String)startspin.getValue();
-        if(jTextField4.getText().equals("")||jTextField7.getText().equals("")||jTextField8.getText().equals("")||jTextField9.getText().equals("")||jTextField10.getText().equals("")){
-            JOptionPane.showMessageDialog(this,"Text Fields can't be empty");
-        }else{
+        
             price=Float.parseFloat(jTextField4.getText());
-        rowl=Integer.parseInt(jTextField7.getText());
-        spl=Integer.parseInt(jTextField8.getText());
-        rowr=Integer.parseInt(jTextField9.getText());
-        spr=Integer.parseInt(jTextField10.getText());
+        rowl=15;
+        spl=2;
+        rowr=15;
+        spr=3;
         
         
         try{
@@ -345,7 +282,7 @@ public class addBusinfo extends javax.swing.JFrame {
         }
         }
         
-        }
+        
         
         
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -404,22 +341,14 @@ public class addBusinfo extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField10;
     private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
-    private javax.swing.JTextField jTextField9;
     private javax.swing.JRadioButton radioac;
     private javax.swing.JRadioButton radiononac;
     private javax.swing.JSpinner startspin;

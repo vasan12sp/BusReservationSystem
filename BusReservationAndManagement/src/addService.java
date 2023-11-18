@@ -258,7 +258,7 @@ public class addService extends javax.swing.JFrame {
                 part="Right";
             }
     }
-        String qToInsert=String.format("insert into services (busid, date, time, start, end, seat,part,position, passenger, age, id) values('%s', '%s','%s','%s','%s', '%d', '%s','%s','', 0, '')", id, date, time, start, end, i,part,position);
+        String qToInsert=String.format("insert into services (busid, date, time, start, end, seat,part,position, passenger, age, id,mobileno) values('%s', '%s','%s','%s','%s', '%d', '%s','%s','', 0, '','')", id, date, time, start, end, i,part,position);
         st.executeUpdate(qToInsert);
         
     }

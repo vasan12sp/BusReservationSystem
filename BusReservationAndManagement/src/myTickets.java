@@ -4,6 +4,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import javax.swing.table.DefaultTableModel;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -13,47 +14,57 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author vasan12sp
  */
-public class viewBus extends javax.swing.JFrame {
+public class myTickets extends javax.swing.JFrame {
 
     /**
-     * Creates new form viewBus
+     * Creates new form myTickets
      */
-    public viewBus() {
+    String mobno;
+    String name;
+    public myTickets(String mobno) {
         initComponents();
+        this.mobno=mobno;
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
-            
             Connection con= DriverManager.getConnection("jdbc:mysql://localhost:3306/busbooking","root","");
             Statement st = con.createStatement();
-            String q="select * from busdetails";
-            ResultSet rs=st.executeQuery(q);
-            int i=1;
-            while(rs.next()){
+            
+                String q = String.format("select * from services where mobileno = '%s'",mobno);
+                ResultSet rs=st.executeQuery(q);
+                while(rs.next()){
+                    String busid,passenger,start,end,time,date,position;
+                    int age,seat;
+                    busid=rs.getString("busid");
+                    
+                    passenger=rs.getString("passenger");
+                    start=rs.getString("start");
+                    end=rs.getString("end");
+                    age=rs.getInt("age");
+                    time=rs.getString("time");
+                    date=rs.getString("date");
+                    seat=rs.getInt("seat");
+                    position=rs.getString("position");
+                    String data[]={passenger,String.valueOf(age),start,end,busid,String.valueOf(seat),date,time,position};
+                    DefaultTableModel tb1Model=(DefaultTableModel)jTable1.getModel();
+                    tb1Model.addRow(data);
+                }
                 
-                String busid,start,end,price,ac,time;
-                int sprr,sprl,rowr,rowl;
-                busid=rs.getString("busid");
-                start=rs.getString("start");
-                end=rs.getString("end");
-                price=String.valueOf(rs.getFloat("price"));
-                ac=rs.getString("ac");
-                time=rs.getString("time");
-                rowl=rs.getInt("leftrow");
-                sprl=rs.getInt("spl");
-                rowr=rs.getInt("rightrow");
-                sprr=rs.getInt("spr");
-                int seats=(rowl*sprl)+(rowr*sprr);
-                String seatsStr=String.valueOf(seats);
-                String data[]={String.valueOf(i),busid,start,end,price,ac,time,seatsStr};
-                DefaultTableModel tb1Model=(DefaultTableModel)jTable1.getModel();
-                tb1Model.addRow(data);
-                i++;
-            }
-            con.close();
+                String q1=String.format("select name from users where mobileno='%s'",mobno);
+                rs=st.executeQuery(q1);
+                rs.next();
+                name=rs.getString("name");
+                
+                
+            
+                this.setVisible(false);
+                new adminOptions().setVisible(true);
+                con.close();
+            
             
         }catch(Exception e){
             System.out.println(e);
         }
+        
     }
 
     /**
@@ -65,28 +76,25 @@ public class viewBus extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        jLabel1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setFont(new java.awt.Font("DejaVu Sans", 1, 36)); // NOI18N
-        jLabel1.setText("BUS DETAILS");
-
-        jTable1.setFont(new java.awt.Font("Cantarell", 1, 15));
+        jTable1.setFont(new java.awt.Font("Cantarell", 1, 14)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "S.NO.", "BUS ID", "START", "END", "PRICE", "AC or NON AC", "TIME", "SEATS"
+                "PASSENGER", "AGE", "START", "END", "BUS ID", "SEAT", "DATE", "TIME", "POSITION"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -103,7 +111,11 @@ public class viewBus extends javax.swing.JFrame {
             jTable1.getColumnModel().getColumn(5).setResizable(false);
             jTable1.getColumnModel().getColumn(6).setResizable(false);
             jTable1.getColumnModel().getColumn(7).setResizable(false);
+            jTable1.getColumnModel().getColumn(8).setResizable(false);
         }
+
+        jLabel1.setFont(new java.awt.Font("Cantarell", 1, 36)); // NOI18N
+        jLabel1.setText("YOUR UPCOMING JOURNEY");
 
         jButton1.setFont(new java.awt.Font("Cantarell", 1, 24)); // NOI18N
         jButton1.setText("GO BACK");
@@ -128,46 +140,47 @@ public class viewBus extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(15, 15, 15)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1409, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(621, 621, 621)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(418, 418, 418)
+                        .addGap(226, 226, 226)
                         .addComponent(jButton1)
-                        .addGap(415, 415, 415)
-                        .addComponent(jButton2)))
-                .addContainerGap(19, Short.MAX_VALUE))
+                        .addGap(262, 262, 262)
+                        .addComponent(jButton2))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(50, 50, 50)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 857, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(84, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(245, 245, 245))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(24, 24, 24)
+                .addGap(52, 52, 52)
                 .addComponent(jLabel1)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 376, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(29, 29, 29)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(45, 45, 45)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
                     .addComponent(jButton2))
-                .addContainerGap(71, Short.MAX_VALUE))
+                .addContainerGap(52, Short.MAX_VALUE))
         );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        this.setVisible(false);
+        new userLogged(name,mobno);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         System.exit(0);
     }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-        new adminOptions().setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -186,20 +199,21 @@ public class viewBus extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(viewBus.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(myTickets.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(viewBus.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(myTickets.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(viewBus.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(myTickets.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(viewBus.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(myTickets.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
+        String mobno="";
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new viewBus().setVisible(true);
+                new myTickets(mobno).setVisible(true);
             }
         });
     }

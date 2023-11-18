@@ -25,10 +25,7 @@ public class editBus extends javax.swing.JFrame {
         initComponents();
         
         priceTf.setDocument(new limitclass(5));
-        rowlTf.setDocument(new limitclass(2));
-        rowrTf.setDocument(new limitclass(2));
-        splTf.setDocument(new limitclass(1));
-        sprTf.setDocument(new limitclass(1));
+        
         buttonGroup1.add(radioac);
         buttonGroup1.add(radiononac);
         try{
@@ -74,14 +71,6 @@ public class editBus extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         priceTf = new javax.swing.JTextField();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        rowlTf = new javax.swing.JTextField();
-        sprTf = new javax.swing.JTextField();
-        splTf = new javax.swing.JTextField();
-        jLabel9 = new javax.swing.JLabel();
-        rowrTf = new javax.swing.JTextField();
-        jLabel10 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
@@ -119,26 +108,6 @@ public class editBus extends javax.swing.JFrame {
         jLabel6.setText("AC OR NON-AC");
 
         priceTf.setFont(new java.awt.Font("Cantarell", 0, 24)); // NOI18N
-
-        jLabel7.setFont(new java.awt.Font("DejaVu Sans", 1, 24)); // NOI18N
-        jLabel7.setText("ROWS IN LEFT");
-
-        jLabel8.setFont(new java.awt.Font("DejaVu Sans", 1, 24)); // NOI18N
-        jLabel8.setText("SEATS PER ROW");
-
-        rowlTf.setFont(new java.awt.Font("Cantarell", 0, 24)); // NOI18N
-
-        sprTf.setFont(new java.awt.Font("Cantarell", 0, 24)); // NOI18N
-
-        splTf.setFont(new java.awt.Font("Cantarell", 0, 24)); // NOI18N
-
-        jLabel9.setFont(new java.awt.Font("DejaVu Sans", 1, 24)); // NOI18N
-        jLabel9.setText("ROWS IN RIGHT");
-
-        rowrTf.setFont(new java.awt.Font("Cantarell", 0, 24)); // NOI18N
-
-        jLabel10.setFont(new java.awt.Font("DejaVu Sans", 1, 24)); // NOI18N
-        jLabel10.setText("SEATS PER ROW");
 
         jLabel2.setFont(new java.awt.Font("DejaVu Sans", 1, 24)); // NOI18N
         jLabel2.setText("BUS ID");
@@ -188,19 +157,12 @@ public class editBus extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(30, 30, 30)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel10)
                             .addComponent(jLabel11)
                             .addComponent(jLabel5)
                             .addComponent(jLabel6)
-                            .addComponent(jLabel7)
-                            .addComponent(jLabel8)
-                            .addComponent(jLabel9)
                             .addComponent(jLabel4)
                             .addComponent(jLabel3)
-                            .addComponent(jLabel2)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jButton1)
-                                .addGap(64, 64, 64)))
+                            .addComponent(jLabel2))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                 .addGap(112, 112, 112)
@@ -209,27 +171,24 @@ public class editBus extends javax.swing.JFrame {
                                 .addComponent(radiononac)
                                 .addGap(22, 22, 22))
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(40, 40, 40)
+                                .addGap(94, 94, 94)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jButton2)
-                                        .addGap(107, 107, 107)
-                                        .addComponent(jButton3)
-                                        .addGap(35, 35, 35))
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                         .addComponent(priceTf, javax.swing.GroupLayout.Alignment.TRAILING)
                                         .addComponent(jComboBox2, javax.swing.GroupLayout.Alignment.TRAILING, 0, 306, Short.MAX_VALUE)
                                         .addComponent(jComboBox1, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(jComboBox3, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(sprTf, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 306, Short.MAX_VALUE)
-                                        .addComponent(rowrTf, javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(splTf, javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(rowlTf, javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(spinner, javax.swing.GroupLayout.Alignment.TRAILING))))))
+                                    .addComponent(spinner, javax.swing.GroupLayout.PREFERRED_SIZE, 306, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(126, 126, 126)
-                        .addComponent(jLabel1)))
+                        .addComponent(jLabel1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(115, 115, 115)
+                        .addComponent(jButton1)
+                        .addGap(98, 98, 98)
+                        .addComponent(jButton2)
+                        .addGap(103, 103, 103)
+                        .addComponent(jButton3)))
                 .addContainerGap(93, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -271,28 +230,12 @@ public class editBus extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addComponent(spinner)))
-                .addGap(25, 25, 25)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel7)
-                    .addComponent(rowlTf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(13, 13, 13)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel8)
-                    .addComponent(splTf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel9)
-                    .addComponent(rowrTf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel10)
-                    .addComponent(sprTf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(43, 43, 43)
+                .addGap(39, 39, 39)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
                     .addComponent(jButton2)
                     .addComponent(jButton3))
-                .addContainerGap(11, Short.MAX_VALUE))
+                .addContainerGap(55, Short.MAX_VALUE))
         );
 
         pack();
@@ -327,10 +270,10 @@ public class editBus extends javax.swing.JFrame {
             ac="NON AC";
         }
         price=Float.parseFloat(priceTf.getText());
-        rowr=Integer.parseInt(rowrTf.getText());
-        rowl=Integer.parseInt(rowlTf.getText());
-        spr=Integer.parseInt(sprTf.getText());
-        spl=Integer.parseInt(splTf.getText());
+        rowr=15;
+        rowl=15;
+        spr=3;
+        spl=2;
         time=(String) spinner.getValue();
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -398,23 +341,15 @@ public class editBus extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JComboBox<String> jComboBox3;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JTextField priceTf;
     private javax.swing.JRadioButton radioac;
     private javax.swing.JRadioButton radiononac;
-    private javax.swing.JTextField rowlTf;
-    private javax.swing.JTextField rowrTf;
     private javax.swing.JSpinner spinner;
-    private javax.swing.JTextField splTf;
-    private javax.swing.JTextField sprTf;
     // End of variables declaration//GEN-END:variables
 }
