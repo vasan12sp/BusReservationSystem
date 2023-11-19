@@ -53,8 +53,12 @@ public class seatSelection extends javax.swing.JFrame {
             }
             
             con.close();
-            for(int i:availableSeats){
-                switch(i){
+            
+            
+            
+            for(int i=1;i<76;i++){
+                if(availableSeats.contains(i)){
+                    switch(i){
                     case 1:mw(s1);
                     case 2:mw(s2);
                     case 3:mw(s3);
@@ -131,7 +135,17 @@ case 73: mw(s73);
 case 74: mw(s74);
                        case 75: mw(s75);
                 }
+                }else{
+                    switch(i){
+case 1:mw1(s1);case 2:mw1(s2);case 3:mw1(s3);case 4: mw1(s4);case 5: mw1(s5);case 6: mw1(s6);case 7: mw1(s7);case 8: mw1(s8);case 9: mw1(s9);case 10: mw1(s10);case 11: mw1(s11);case 12: mw1(s12);case 13: mw1(s13);case 14: mw1(s14);case 15: mw1(s15);
+case 16: mw1(s16);case 17: mw1(s17);case 18: mw1(s18);case 19: mw1(s19);case 20: mw1(s20);case 21: mw1(s21);case 22: mw1(s22);case 23: mw1(s23);case 24: mw1(s24);case 25: mw1(s25);case 26: mw1(s26);case 27: mw1(s27);case 28: mw1(s28);case 29: mw1(s29);case 30: mw1(s30);case 31: mw1(s31);case 32: mw1(s32);case 33: mw1(s33);case 34: mw1(s34);case 35: mw1(s35);case 36: mw1(s36);case 37: mw1(s37);case 38: mw1(s38);case 39: mw1(s39);
+case 40: mw1(s40);case 41: mw1(s41);case 42: mw1(s42);case 43: mw1(s43);case 44: mw1(s44);case 45: mw1(s45);case 46: mw1(s46);case 47: mw1(s47);case 48: mw1(s48);case 49: mw1(s49);case 50: mw1(s50);case 51: mw1(s51);case 52: mw1(s52);case 53: mw1(s53);case 54: mw1(s54);case 55: mw1(s55);case 56: mw1(s56);
+case 57: mw1(s57);case 58: mw1(s58);case 59: mw1(s59);case 60: mw1(s60);case 61: mw1(s61);case 62: mw1(s62);case 63: mw1(s63);case 64: mw1(s64);case 65: mw1(s65);case 66: mw1(s66);case 67: mw1(s67);case 68: mw1(s68);case 69: mw1(s69);case 70: mw1(s70);case 71: mw1(s71);case 72: mw1(s72);case 73: mw1(s73);case 74: mw1(s74);case 75: mw1(s75);
+                }
+                }
             }
+            
+            
             addListener(s1);addListener(s2);addListener(s3);addListener(s4);addListener(s5);
             addListener(s6);addListener(s7);addListener(s8);addListener(s9);addListener(s10);
             addListener(s11);addListener(s12);addListener(s13);addListener(s14);addListener(s15);
@@ -164,6 +178,9 @@ case 74: mw(s74);
     
     public void mw(JButton b){
         b.setBackground(Color.WHITE);
+    }
+    public void mw1(JButton b){
+        b.setBackground(Color.DARK_GRAY);
     }
         
     
