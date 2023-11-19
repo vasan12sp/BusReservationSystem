@@ -39,14 +39,19 @@ public class addCities extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("DejaVu Sans", 1, 36)); // NOI18N
         jLabel1.setText("ADD SERVICE CITY");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(164, 33, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Cantarell", 1, 24)); // NOI18N
         jLabel2.setText("CITY NAME");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(78, 126, -1, -1));
 
         cityname.setFont(new java.awt.Font("Cantarell", 0, 24)); // NOI18N
+        getContentPane().add(cityname, new org.netbeans.lib.awtextra.AbsoluteConstraints(296, 123, 291, -1));
 
         jButton1.setFont(new java.awt.Font("Cantarell", 1, 24)); // NOI18N
         jButton1.setText("ADD");
@@ -55,6 +60,7 @@ public class addCities extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(93, 205, -1, -1));
 
         jButton2.setFont(new java.awt.Font("Cantarell", 1, 24)); // NOI18N
         jButton2.setText("GO BACK");
@@ -63,6 +69,7 @@ public class addCities extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 205, -1, -1));
 
         jButton3.setFont(new java.awt.Font("Cantarell", 1, 24)); // NOI18N
         jButton3.setText("EXIT");
@@ -71,48 +78,7 @@ public class addCities extends javax.swing.JFrame {
                 jButton3ActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(78, 78, 78)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel2)
-                                .addGap(89, 89, 89)
-                                .addComponent(cityname, javax.swing.GroupLayout.PREFERRED_SIZE, 291, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jButton1)
-                                .addGap(84, 84, 84)
-                                .addComponent(jButton2)
-                                .addGap(84, 84, 84)
-                                .addComponent(jButton3)
-                                .addGap(25, 25, 25))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(164, 164, 164)
-                        .addComponent(jLabel1)))
-                .addContainerGap(98, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(33, 33, 33)
-                .addComponent(jLabel1)
-                .addGap(47, 47, 47)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cityname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2))
-                .addGap(46, 46, 46)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3))
-                .addContainerGap(93, Short.MAX_VALUE))
-        );
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(479, 205, -1, -1));
 
         pack();
         setLocationRelativeTo(null);

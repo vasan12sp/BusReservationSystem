@@ -45,95 +45,72 @@ public class newUser extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         passTf = new javax.swing.JPasswordField();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("DejaVu Sans", 1, 36)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("DejaVu Serif Condensed", 1, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(204, 255, 255));
         jLabel1.setText("NEW USER SIGN UP");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 50, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("DejaVu Sans", 1, 24)); // NOI18N
+        jLabel2.setForeground(java.awt.Color.white);
         jLabel2.setText("NAME");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(113, 148, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("DejaVu Sans", 1, 24)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("MOBILE NO.");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 210, -1, -1));
 
+        jLabel4.setBackground(new java.awt.Color(0, 0, 0));
         jLabel4.setFont(new java.awt.Font("DejaVu Sans", 1, 24)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(0, 102, 102));
         jLabel4.setText("PASSWORD");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 280, -1, -1));
 
+        nameTf.setBackground(new java.awt.Color(0, 51, 51));
         nameTf.setFont(new java.awt.Font("Cantarell", 0, 24)); // NOI18N
+        nameTf.setForeground(new java.awt.Color(51, 255, 255));
+        getContentPane().add(nameTf, new org.netbeans.lib.awtextra.AbsoluteConstraints(364, 144, 339, -1));
 
+        mobnoTf.setBackground(new java.awt.Color(0, 51, 51));
         mobnoTf.setFont(new java.awt.Font("Cantarell", 0, 24)); // NOI18N
+        mobnoTf.setForeground(new java.awt.Color(51, 255, 255));
+        getContentPane().add(mobnoTf, new org.netbeans.lib.awtextra.AbsoluteConstraints(364, 210, 339, -1));
 
-        jButton1.setFont(new java.awt.Font("Cantarell", 0, 24)); // NOI18N
+        jButton1.setBackground(new java.awt.Color(0, 51, 51));
+        jButton1.setFont(new java.awt.Font("Cantarell", 1, 24)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(204, 255, 255));
         jButton1.setText("SUBMIT");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(196, 362, -1, -1));
 
+        jButton2.setBackground(new java.awt.Color(0, 51, 51));
         jButton2.setFont(new java.awt.Font("Cantarell", 0, 24)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(204, 255, 255));
         jButton2.setText("GO BACK");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(498, 362, -1, -1));
 
+        passTf.setBackground(new java.awt.Color(0, 51, 51));
         passTf.setFont(new java.awt.Font("Cantarell", 0, 24)); // NOI18N
+        passTf.setForeground(new java.awt.Color(51, 255, 255));
+        getContentPane().add(passTf, new org.netbeans.lib.awtextra.AbsoluteConstraints(364, 278, 339, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(113, 113, 113)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel4))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(nameTf, javax.swing.GroupLayout.DEFAULT_SIZE, 339, Short.MAX_VALUE)
-                            .addComponent(mobnoTf)
-                            .addComponent(passTf)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(223, 223, 223)
-                        .addComponent(jLabel1)
-                        .addGap(0, 84, Short.MAX_VALUE)))
-                .addGap(151, 151, 151))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(196, 196, 196)
-                .addComponent(jButton1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton2)
-                .addGap(221, 221, 221))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(51, 51, 51)
-                .addComponent(jLabel1)
-                .addGap(50, 50, 50)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(nameTf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(30, 30, 30)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(mobnoTf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(32, 32, 32)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(passTf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(48, 48, 48)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
-                .addContainerGap(89, Short.MAX_VALUE))
-        );
+        jLabel5.setIcon(new javax.swing.ImageIcon("/home/vasan12sp/Desktop/bus3new.jpg")); // NOI18N
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 740, 420));
 
         pack();
         setLocationRelativeTo(null);
@@ -232,6 +209,7 @@ public class newUser extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JTextField mobnoTf;
     private javax.swing.JTextField nameTf;
     private javax.swing.JPasswordField passTf;

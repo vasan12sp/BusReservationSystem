@@ -297,6 +297,7 @@ case 57: mw1(s57);case 58: mw1(s58);case 59: mw1(s59);case 60: mw1(s60);case 61:
         jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         s5.setIcon(new javax.swing.ImageIcon("/home/vasan12sp/Desktop/seat1.png")); // NOI18N
         s5.setText("05");

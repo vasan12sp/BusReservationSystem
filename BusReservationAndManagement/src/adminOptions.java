@@ -49,27 +49,36 @@ public class adminOptions extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setFont(new java.awt.Font("DejaVu Sans", 1, 10)); // NOI18N
+        setResizable(false);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("DejaVu Sans", 1, 36)); // NOI18N
         jLabel1.setText("ADMINISTRATOR OPTIONS");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(86, 49, -1, -1));
 
         addbus.setFont(new java.awt.Font("DejaVu Sans", 1, 24)); // NOI18N
         addbus.setText("ADD BUS");
+        getContentPane().add(addbus, new org.netbeans.lib.awtextra.AbsoluteConstraints(74, 134, -1, -1));
 
         viewbus.setFont(new java.awt.Font("DejaVu Sans", 1, 24)); // NOI18N
         viewbus.setText("VIEW BUS LIST");
+        getContentPane().add(viewbus, new org.netbeans.lib.awtextra.AbsoluteConstraints(379, 134, -1, -1));
 
         removebus.setFont(new java.awt.Font("DejaVu Sans", 1, 24)); // NOI18N
         removebus.setText("REMOVE BUS");
+        getContentPane().add(removebus, new org.netbeans.lib.awtextra.AbsoluteConstraints(74, 213, -1, -1));
 
         editbus.setFont(new java.awt.Font("DejaVu Sans", 1, 24)); // NOI18N
         editbus.setText("EDIT BUS");
+        getContentPane().add(editbus, new org.netbeans.lib.awtextra.AbsoluteConstraints(379, 213, -1, -1));
 
         addservice.setFont(new java.awt.Font("DejaVu Sans", 1, 24)); // NOI18N
         addservice.setText("ADD SERVICE");
+        getContentPane().add(addservice, new org.netbeans.lib.awtextra.AbsoluteConstraints(74, 290, -1, -1));
 
         editservice.setFont(new java.awt.Font("DejaVu Sans", 1, 24)); // NOI18N
         editservice.setText("DELETE SERVICE");
+        getContentPane().add(editservice, new org.netbeans.lib.awtextra.AbsoluteConstraints(379, 290, -1, -1));
 
         jButton1.setFont(new java.awt.Font("Cantarell", 1, 24)); // NOI18N
         jButton1.setText("PROCEED");
@@ -78,6 +87,7 @@ public class adminOptions extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 473, -1, -1));
 
         jButton2.setFont(new java.awt.Font("Cantarell", 1, 24)); // NOI18N
         jButton2.setText("EXIT");
@@ -86,6 +96,7 @@ public class adminOptions extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(472, 473, -1, -1));
 
         addcity.setFont(new java.awt.Font("Cantarell", 1, 24)); // NOI18N
         addcity.setText("ADD SERVICE CITIES");
@@ -94,63 +105,7 @@ public class adminOptions extends javax.swing.JFrame {
                 addcityActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(100, 100, 100)
-                .addComponent(jButton1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton2)
-                .addGap(131, 131, 131))
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(74, 74, 74)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel1)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(addbus)
-                                    .addComponent(removebus)
-                                    .addComponent(addservice))
-                                .addGap(102, 102, 102)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(editservice)
-                                    .addComponent(editbus)
-                                    .addComponent(viewbus)))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(201, 201, 201)
-                        .addComponent(addcity)))
-                .addContainerGap(64, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(49, 49, 49)
-                .addComponent(jLabel1)
-                .addGap(42, 42, 42)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(addbus)
-                    .addComponent(viewbus))
-                .addGap(46, 46, 46)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(removebus)
-                    .addComponent(editbus))
-                .addGap(44, 44, 44)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(addservice)
-                    .addComponent(editservice))
-                .addGap(53, 53, 53)
-                .addComponent(addcity)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 63, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
-                .addGap(86, 86, 86))
-        );
+        getContentPane().add(addcity, new org.netbeans.lib.awtextra.AbsoluteConstraints(201, 376, -1, -1));
 
         pack();
         setLocationRelativeTo(null);

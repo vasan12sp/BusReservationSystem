@@ -36,90 +36,58 @@ public class WELCOME extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        setResizable(false);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("DejaVu Sans", 1, 36)); // NOI18N
-        jLabel1.setText("XYZ BUS SERVICES");
+        jLabel1.setFont(new java.awt.Font("URW Bookman L", 3, 48)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 153));
+        jLabel1.setText("NEEVI TRAVELS");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 70, -1, -1));
 
         newB.setFont(new java.awt.Font("Cantarell", 1, 24)); // NOI18N
+        newB.setForeground(new java.awt.Color(0, 255, 255));
         newB.setText("NEW USER");
+        getContentPane().add(newB, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 230, -1, -1));
 
         registeredB.setFont(new java.awt.Font("Cantarell", 1, 24)); // NOI18N
+        registeredB.setForeground(new java.awt.Color(0, 255, 255));
         registeredB.setText("RESISTERED USER");
+        getContentPane().add(registeredB, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 280, -1, -1));
 
         adminB.setFont(new java.awt.Font("Cantarell", 1, 24)); // NOI18N
+        adminB.setForeground(new java.awt.Color(0, 255, 255));
         adminB.setText("ADMIN LOGIN");
+        getContentPane().add(adminB, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 330, -1, -1));
 
+        jButton1.setBackground(new java.awt.Color(0, 0, 0));
         jButton1.setFont(new java.awt.Font("Cantarell", 0, 24)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(0, 255, 255));
         jButton1.setText("PROCEED");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(125, 432, -1, -1));
 
+        jButton2.setBackground(new java.awt.Color(0, 0, 0));
         jButton2.setFont(new java.awt.Font("Cantarell", 0, 24)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(0, 255, 255));
         jButton2.setText("EXIT");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(415, 432, -1, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(633, 160, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(633, Short.MAX_VALUE)
-                .addComponent(jLabel2)
-                .addGap(18, 18, 18))
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(238, 238, 238)
-                        .addComponent(newB))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(203, 203, 203)
-                        .addComponent(registeredB))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(228, 228, 228)
-                        .addComponent(adminB))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(125, 125, 125)
-                        .addComponent(jButton1)
-                        .addGap(149, 149, 149)
-                        .addComponent(jButton2)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 133, Short.MAX_VALUE)
-                    .addComponent(jLabel1)
-                    .addGap(0, 133, Short.MAX_VALUE)))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(160, 160, 160)
-                .addComponent(jLabel2)
-                .addGap(32, 32, 32)
-                .addComponent(newB)
-                .addGap(41, 41, 41)
-                .addComponent(registeredB)
-                .addGap(48, 48, 48)
-                .addComponent(adminB)
-                .addGap(49, 49, 49)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
-                .addContainerGap(66, Short.MAX_VALUE))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 66, Short.MAX_VALUE)
-                    .addComponent(jLabel1)
-                    .addGap(0, 425, Short.MAX_VALUE)))
-        );
+        jLabel4.setIcon(new javax.swing.ImageIcon("/home/vasan12sp/Desktop/bus1new.jpg")); // NOI18N
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, 660, 540));
 
         pack();
         setLocationRelativeTo(null);
@@ -186,6 +154,7 @@ public class WELCOME extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JRadioButton newB;
     private javax.swing.JRadioButton registeredB;
     // End of variables declaration//GEN-END:variables
