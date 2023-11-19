@@ -2,6 +2,7 @@
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.Statement;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import limit.limitfolder.limitclass;
 
@@ -21,13 +22,18 @@ public class addPassenger extends javax.swing.JFrame {
      */
     int seatNum;
     String mobno,busid,date;
-    public addPassenger(int seatNum,String mobno,String busid,String date) {
+    boolean last;
+    ArrayList<Integer> selectedSeats=new ArrayList<>();
+    public addPassenger(ArrayList<Integer> selectedSeats,String mobno,String busid,String date,boolean islast) {
         initComponents();
+        this.selectedSeats=selectedSeats;
         nameTf.setDocument(new limitclass(20));
         idTf.setDocument(new limitclass(20));
         ageTf.setDocument(new limitclass(2));
+        last=islast;
+        seatNum=selectedSeats.get(0);
+        selectedSeats.remove(0);
         
-        this.seatNum=seatNum;
         jLabel6.setText("Seat Number: "+seatNum);
         this.mobno=mobno;
         this.busid=busid;
@@ -177,6 +183,17 @@ public class addPassenger extends javax.swing.JFrame {
                         
             st.executeUpdate(q);
             JOptionPane.showMessageDialog(this,"Added Successfully");
+            if(last){
+                
+                this.setVisible(false);
+                new myTickets(mobno).setVisible(true);
+            }else{
+                if(selectedSeats.size()==1){
+                    last=true;
+                }
+                new addPassenger(selectedSeats,mobno,busid,date,last).setVisible(true);
+                
+            }
             this.setVisible(false);
             
             con.close();
@@ -217,11 +234,12 @@ public class addPassenger extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                int seatNum=0;
+                ArrayList<Integer> seatNum=new ArrayList<>();
                 String mobno="";
                 String busid="";
                 String date="";
-                new addPassenger(seatNum,mobno,busid,date).setVisible(true);
+                boolean last=false;
+                new addPassenger(seatNum,mobno,busid,date,last).setVisible(true);
             }
         });
     }

@@ -187,7 +187,7 @@ case 74: mw(s74);
                 }
             } else {
                 // Seat is not available
-                JOptionPane.showMessageDialog(null, "Seat " + seatNumber + " is not available.");
+                JOptionPane.showMessageDialog(null, "Seat " + seatNumber + " is not available");
             }
         }
     }
@@ -856,13 +856,19 @@ case 74: mw(s74);
         // TODO add your handling code here:
         int selected=selectedSeats.size();
         if(selected>max || selected<max){
-            JOptionPane.showMessageDialog(this,"Select exact number of seats");
+            JOptionPane.showMessageDialog(this,"Select "+max+" seats");
         }else{
             //the frame to get the passenger details
-            int num=selectedSeats.size();
-            for(int i:selectedSeats){
-                new addPassenger(i,mobno,busid,date).setVisible(true);
+            
+            
+            if(selectedSeats.size()==1){
+                new addPassenger(selectedSeats,mobno,busid,date,true).setVisible(true);
+            }else{
+                new addPassenger(selectedSeats,mobno,busid,date,false).setVisible(true);
             }
+            
+                
+            
             this.setVisible(false);
         }
     }//GEN-LAST:event_jButton1ActionPerformed
