@@ -60,57 +60,76 @@ public class addPassenger extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Cantarell", 1, 36)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("DejaVu Serif Condensed", 1, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(51, 255, 255));
         jLabel1.setText("PASSENGER INFORMATION");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(112, 46, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Cantarell", 1, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(153, 255, 255));
         jLabel2.setText("NAME");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(152, 154, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Cantarell", 1, 24)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(153, 255, 255));
         jLabel3.setText("AGE");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(175, 232, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Cantarell", 1, 24)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(153, 255, 255));
         jLabel4.setText("ID NO");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(156, 322, -1, -1));
 
+        nameTf.setBackground(new java.awt.Color(0, 51, 51));
         nameTf.setFont(new java.awt.Font("Cantarell", 0, 24)); // NOI18N
+        nameTf.setForeground(new java.awt.Color(153, 255, 255));
         getContentPane().add(nameTf, new org.netbeans.lib.awtextra.AbsoluteConstraints(286, 154, 229, -1));
 
+        ageTf.setBackground(new java.awt.Color(0, 51, 51));
         ageTf.setFont(new java.awt.Font("Cantarell", 0, 24)); // NOI18N
+        ageTf.setForeground(new java.awt.Color(153, 255, 255));
         getContentPane().add(ageTf, new org.netbeans.lib.awtextra.AbsoluteConstraints(286, 232, 229, -1));
 
+        idTf.setBackground(new java.awt.Color(0, 51, 51));
         idTf.setFont(new java.awt.Font("Cantarell", 0, 24)); // NOI18N
+        idTf.setForeground(new java.awt.Color(153, 255, 255));
         getContentPane().add(idTf, new org.netbeans.lib.awtextra.AbsoluteConstraints(286, 319, 229, -1));
 
+        jLabel5.setForeground(new java.awt.Color(153, 255, 255));
         jLabel5.setText("*VALID ID PROOF WILL BE CHECKED AT THE TIME OF TRAVELLING");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(188, 361, -1, -1));
 
+        jButton1.setBackground(new java.awt.Color(0, 51, 51));
         jButton1.setFont(new java.awt.Font("Cantarell", 1, 24)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(204, 255, 255));
         jButton1.setText("ADD");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(188, 452, -1, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 410, -1, -1));
 
+        jButton2.setBackground(new java.awt.Color(0, 51, 51));
         jButton2.setFont(new java.awt.Font("Cantarell", 1, 24)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(204, 255, 255));
         jButton2.setText("CANCEL");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(414, 452, -1, -1));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 410, -1, -1));
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(645, 120, -1, -1));
+
+        jLabel7.setIcon(new javax.swing.ImageIcon("/home/vasan12sp/Desktop/solid 1 new.jpg")); // NOI18N
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 730, 480));
 
         pack();
         setLocationRelativeTo(null);
@@ -209,6 +228,7 @@ public class addPassenger extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JTextField nameTf;
     // End of variables declaration//GEN-END:variables
 }

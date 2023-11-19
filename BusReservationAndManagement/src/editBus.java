@@ -92,39 +92,50 @@ public class editBus extends javax.swing.JFrame {
         // Create a SpinnerListModel with the array of time values
         SpinnerListModel spinnerModel = new SpinnerListModel(timeValues);
         spinner = new javax.swing.JSpinner(spinnerModel);
+        jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("DejaVu Sans", 1, 36)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("DejaVu Serif Condensed", 1, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(102, 255, 255));
         jLabel1.setText("EDIT BUS INFORMATION");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(126, 38, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("DejaVu Sans", 1, 24)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(204, 255, 255));
         jLabel4.setText("ENDING POINT");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(62, 244, -1, 19));
 
         jLabel5.setFont(new java.awt.Font("DejaVu Sans", 1, 24)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(204, 255, 255));
         jLabel5.setText("PRICE IN RUPEES");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 298, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("DejaVu Sans", 1, 24)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(204, 255, 255));
         jLabel6.setText("AC OR NON-AC");
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 352, -1, -1));
 
+        priceTf.setBackground(new java.awt.Color(0, 51, 51));
         priceTf.setFont(new java.awt.Font("Cantarell", 0, 24)); // NOI18N
+        priceTf.setForeground(new java.awt.Color(204, 255, 255));
         getContentPane().add(priceTf, new org.netbeans.lib.awtextra.AbsoluteConstraints(352, 298, 306, -1));
 
         jLabel2.setFont(new java.awt.Font("DejaVu Sans", 1, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(204, 255, 255));
         jLabel2.setText("BUS ID");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(167, 133, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("DejaVu Sans", 1, 24)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(204, 255, 255));
         jLabel3.setText("STARTING POINT");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 183, -1, -1));
 
+        jButton1.setBackground(new java.awt.Color(0, 51, 51));
         jButton1.setFont(new java.awt.Font("Cantarell", 1, 24)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(204, 255, 255));
         jButton1.setText("EDIT");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -133,7 +144,9 @@ public class editBus extends javax.swing.JFrame {
         });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(115, 474, -1, -1));
 
+        jButton2.setBackground(new java.awt.Color(0, 51, 51));
         jButton2.setFont(new java.awt.Font("Cantarell", 1, 24)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(204, 255, 255));
         jButton2.setText("GO BACK");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -142,7 +155,9 @@ public class editBus extends javax.swing.JFrame {
         });
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(298, 474, -1, -1));
 
+        jButton3.setBackground(new java.awt.Color(0, 51, 51));
         jButton3.setFont(new java.awt.Font("Cantarell", 1, 24)); // NOI18N
+        jButton3.setForeground(new java.awt.Color(204, 255, 255));
         jButton3.setText("EXIT");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -152,23 +167,33 @@ public class editBus extends javax.swing.JFrame {
         getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(536, 474, -1, -1));
 
         jLabel11.setFont(new java.awt.Font("DejaVu Sans", 1, 24)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(204, 255, 255));
         jLabel11.setText("TIME");
         getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(193, 406, -1, -1));
 
+        jComboBox1.setBackground(new java.awt.Color(0, 51, 51));
         getContentPane().add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(352, 180, 306, 40));
 
+        jComboBox2.setBackground(new java.awt.Color(0, 51, 51));
         getContentPane().add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(352, 238, 306, 42));
 
         radioac.setFont(new java.awt.Font("Cantarell", 1, 18)); // NOI18N
+        radioac.setForeground(new java.awt.Color(153, 255, 255));
         radioac.setText("AC");
         getContentPane().add(radioac, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 355, -1, -1));
 
         radiononac.setFont(new java.awt.Font("Cantarell", 1, 18)); // NOI18N
+        radiononac.setForeground(new java.awt.Color(153, 255, 255));
         radiononac.setText("NON AC");
         getContentPane().add(radiononac, new org.netbeans.lib.awtextra.AbsoluteConstraints(545, 355, -1, -1));
 
+        jComboBox3.setBackground(new java.awt.Color(0, 51, 51));
         getContentPane().add(jComboBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(352, 125, 306, 37));
         getContentPane().add(spinner, new org.netbeans.lib.awtextra.AbsoluteConstraints(352, 399, 306, 36));
+
+        jLabel7.setIcon(new javax.swing.ImageIcon("/home/vasan12sp/Desktop/solid6.jpg")); // NOI18N
+        jLabel7.setText("jLabel7");
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, 740, 600));
 
         pack();
         setLocationRelativeTo(null);
@@ -279,6 +304,7 @@ public class editBus extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JTextField priceTf;
     private javax.swing.JRadioButton radioac;
     private javax.swing.JRadioButton radiononac;

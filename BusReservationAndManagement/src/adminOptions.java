@@ -46,66 +46,83 @@ public class adminOptions extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         addcity = new javax.swing.JRadioButton();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setFont(new java.awt.Font("DejaVu Sans", 1, 10)); // NOI18N
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("DejaVu Sans", 1, 36)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("DejaVu Serif Condensed", 1, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(153, 255, 255));
         jLabel1.setText("ADMINISTRATOR OPTIONS");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(86, 49, -1, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 30, -1, -1));
 
         addbus.setFont(new java.awt.Font("DejaVu Sans", 1, 24)); // NOI18N
+        addbus.setForeground(new java.awt.Color(153, 255, 255));
         addbus.setText("ADD BUS");
-        getContentPane().add(addbus, new org.netbeans.lib.awtextra.AbsoluteConstraints(74, 134, -1, -1));
+        getContentPane().add(addbus, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 130, -1, -1));
 
         viewbus.setFont(new java.awt.Font("DejaVu Sans", 1, 24)); // NOI18N
+        viewbus.setForeground(new java.awt.Color(153, 255, 255));
         viewbus.setText("VIEW BUS LIST");
-        getContentPane().add(viewbus, new org.netbeans.lib.awtextra.AbsoluteConstraints(379, 134, -1, -1));
+        getContentPane().add(viewbus, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 130, -1, -1));
 
         removebus.setFont(new java.awt.Font("DejaVu Sans", 1, 24)); // NOI18N
+        removebus.setForeground(new java.awt.Color(153, 255, 255));
         removebus.setText("REMOVE BUS");
-        getContentPane().add(removebus, new org.netbeans.lib.awtextra.AbsoluteConstraints(74, 213, -1, -1));
+        getContentPane().add(removebus, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 190, -1, -1));
 
         editbus.setFont(new java.awt.Font("DejaVu Sans", 1, 24)); // NOI18N
+        editbus.setForeground(new java.awt.Color(153, 255, 255));
         editbus.setText("EDIT BUS");
-        getContentPane().add(editbus, new org.netbeans.lib.awtextra.AbsoluteConstraints(379, 213, -1, -1));
+        getContentPane().add(editbus, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 190, -1, -1));
 
         addservice.setFont(new java.awt.Font("DejaVu Sans", 1, 24)); // NOI18N
+        addservice.setForeground(new java.awt.Color(153, 255, 255));
         addservice.setText("ADD SERVICE");
-        getContentPane().add(addservice, new org.netbeans.lib.awtextra.AbsoluteConstraints(74, 290, -1, -1));
+        getContentPane().add(addservice, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 250, -1, -1));
 
         editservice.setFont(new java.awt.Font("DejaVu Sans", 1, 24)); // NOI18N
+        editservice.setForeground(new java.awt.Color(153, 255, 255));
         editservice.setText("DELETE SERVICE");
-        getContentPane().add(editservice, new org.netbeans.lib.awtextra.AbsoluteConstraints(379, 290, -1, -1));
+        getContentPane().add(editservice, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 250, -1, -1));
 
+        jButton1.setBackground(new java.awt.Color(0, 51, 51));
         jButton1.setFont(new java.awt.Font("Cantarell", 1, 24)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(153, 255, 255));
         jButton1.setText("PROCEED");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 473, -1, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 380, -1, -1));
 
+        jButton2.setBackground(new java.awt.Color(0, 51, 51));
         jButton2.setFont(new java.awt.Font("Cantarell", 1, 24)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(153, 255, 255));
         jButton2.setText("EXIT");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(472, 473, -1, -1));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 380, -1, -1));
 
         addcity.setFont(new java.awt.Font("Cantarell", 1, 24)); // NOI18N
+        addcity.setForeground(new java.awt.Color(153, 255, 255));
         addcity.setText("ADD SERVICE CITIES");
         addcity.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addcityActionPerformed(evt);
             }
         });
-        getContentPane().add(addcity, new org.netbeans.lib.awtextra.AbsoluteConstraints(201, 376, -1, -1));
+        getContentPane().add(addcity, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 310, -1, -1));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon("/home/vasan12sp/Desktop/solid6.jpg")); // NOI18N
+        jLabel2.setText("jLabel2");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 680, 480));
 
         pack();
         setLocationRelativeTo(null);
@@ -193,6 +210,7 @@ public class adminOptions extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JRadioButton removebus;
     private javax.swing.JRadioButton viewbus;
     // End of variables declaration//GEN-END:variables

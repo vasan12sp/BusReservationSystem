@@ -61,6 +61,7 @@ public class addBusinfo extends javax.swing.JFrame {
     private void initComponents() {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
+        jLabel7 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
         jTextField1 = new javax.swing.JTextField();
         jTextField4 = new javax.swing.JTextField();
@@ -90,12 +91,17 @@ public class addBusinfo extends javax.swing.JFrame {
         // Create a JSpinner with the SpinnerListModel
         // JSpinner timeSpinner = new JSpinner(spinnerModel);
         startspin = new javax.swing.JSpinner(spinnerModel);
+        jLabel9 = new javax.swing.JLabel();
+
+        jLabel7.setIcon(new javax.swing.ImageIcon("/home/vasan12sp/Desktop/solid3.jpg")); // NOI18N
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jButton2.setBackground(new java.awt.Color(0, 51, 51));
         jButton2.setFont(new java.awt.Font("Cantarell", 1, 24)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(153, 255, 255));
         jButton2.setText("EXIT");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -104,37 +110,49 @@ public class addBusinfo extends javax.swing.JFrame {
         });
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(589, 455, -1, -1));
 
+        jTextField1.setBackground(new java.awt.Color(0, 51, 51));
         jTextField1.setFont(new java.awt.Font("Cantarell", 0, 24)); // NOI18N
+        jTextField1.setForeground(new java.awt.Color(204, 255, 255));
         getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(392, 127, 280, -1));
 
+        jTextField4.setBackground(new java.awt.Color(0, 51, 51));
         jTextField4.setFont(new java.awt.Font("Cantarell", 0, 24)); // NOI18N
+        jTextField4.setForeground(new java.awt.Color(204, 255, 255));
         getContentPane().add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(392, 288, 280, -1));
 
-        jLabel1.setFont(new java.awt.Font("DejaVu Sans", 1, 36)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("DejaVu Serif Condensed", 1, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(102, 255, 255));
         jLabel1.setText("ADD BUS");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(313, 35, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("DejaVu Sans", 1, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(153, 255, 255));
         jLabel2.setText("BUS ID");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(222, 131, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("DejaVu Sans", 1, 24)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(153, 255, 255));
         jLabel3.setText("STARTING POINT");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(87, 181, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("DejaVu Sans", 1, 24)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(153, 255, 255));
         jLabel4.setText("ENDING POINT");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(117, 248, -1, 20));
 
         jLabel5.setFont(new java.awt.Font("DejaVu Sans", 1, 24)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(153, 255, 255));
         jLabel5.setText("PRICE IN RUPEES");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(85, 292, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("DejaVu Sans", 1, 24)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(153, 255, 255));
         jLabel6.setText("AC OR NON-AC");
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(115, 336, -1, -1));
 
+        jButton1.setBackground(new java.awt.Color(0, 51, 51));
         jButton1.setFont(new java.awt.Font("Cantarell", 1, 24)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(153, 255, 255));
         jButton1.setText("ADD");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -143,7 +161,9 @@ public class addBusinfo extends javax.swing.JFrame {
         });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(164, 455, -1, -1));
 
+        jButton3.setBackground(new java.awt.Color(0, 51, 51));
         jButton3.setFont(new java.awt.Font("Cantarell", 1, 24)); // NOI18N
+        jButton3.setForeground(new java.awt.Color(153, 255, 255));
         jButton3.setText("GO BACK");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -153,23 +173,34 @@ public class addBusinfo extends javax.swing.JFrame {
         getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(346, 455, -1, -1));
 
         jLabel11.setFont(new java.awt.Font("DejaVu Sans", 1, 24)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(153, 255, 255));
         jLabel11.setText("TIME");
         getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(248, 386, -1, -1));
 
+        jComboBox1.setBackground(new java.awt.Color(0, 51, 51));
+        jComboBox1.setForeground(new java.awt.Color(204, 255, 255));
         getContentPane().add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(392, 181, 280, 42));
 
+        jComboBox2.setBackground(new java.awt.Color(0, 51, 51));
+        jComboBox2.setForeground(new java.awt.Color(204, 255, 255));
         getContentPane().add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(392, 241, 280, 41));
 
         radioac.setFont(new java.awt.Font("Cantarell", 1, 18)); // NOI18N
+        radioac.setForeground(new java.awt.Color(153, 255, 255));
         radioac.setText("AC");
         getContentPane().add(radioac, new org.netbeans.lib.awtextra.AbsoluteConstraints(435, 336, -1, -1));
 
         radiononac.setFont(new java.awt.Font("Cantarell", 1, 18)); // NOI18N
+        radiononac.setForeground(new java.awt.Color(153, 255, 255));
         radiononac.setText("NON AC");
         getContentPane().add(radiononac, new org.netbeans.lib.awtextra.AbsoluteConstraints(545, 336, -1, -1));
 
         startspin.setMaximumSize(new java.awt.Dimension(24, 24));
         getContentPane().add(startspin, new org.netbeans.lib.awtextra.AbsoluteConstraints(392, 388, 280, 31));
+
+        jLabel9.setIcon(new javax.swing.ImageIcon("/home/vasan12sp/Desktop/solid6.jpg")); // NOI18N
+        jLabel9.setText("jLabel9");
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, 830, 570));
 
         pack();
         setLocationRelativeTo(null);
@@ -284,6 +315,8 @@ public class addBusinfo extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JRadioButton radioac;

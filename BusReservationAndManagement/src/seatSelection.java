@@ -295,571 +295,337 @@ case 57: mw1(s57);case 58: mw1(s58);case 59: mw1(s59);case 60: mw1(s60);case 61:
         s49 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         s5.setIcon(new javax.swing.ImageIcon("/home/vasan12sp/Desktop/seat1.png")); // NOI18N
         s5.setText("05");
+        getContentPane().add(s5, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 115, -1, -1));
 
         s7.setIcon(new javax.swing.ImageIcon("/home/vasan12sp/Desktop/seat1.png")); // NOI18N
         s7.setText("07");
+        getContentPane().add(s7, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 162, -1, -1));
 
         s8.setIcon(new javax.swing.ImageIcon("/home/vasan12sp/Desktop/seat1.png")); // NOI18N
         s8.setText("08");
+        getContentPane().add(s8, new org.netbeans.lib.awtextra.AbsoluteConstraints(131, 162, -1, -1));
 
         s6.setIcon(new javax.swing.ImageIcon("/home/vasan12sp/Desktop/seat1.png")); // NOI18N
         s6.setText("06");
+        getContentPane().add(s6, new org.netbeans.lib.awtextra.AbsoluteConstraints(131, 115, -1, -1));
 
         s9.setIcon(new javax.swing.ImageIcon("/home/vasan12sp/Desktop/seat1.png")); // NOI18N
         s9.setText("09");
+        getContentPane().add(s9, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 209, -1, -1));
 
         s10.setIcon(new javax.swing.ImageIcon("/home/vasan12sp/Desktop/seat1.png")); // NOI18N
         s10.setText("10");
+        getContentPane().add(s10, new org.netbeans.lib.awtextra.AbsoluteConstraints(132, 209, -1, -1));
 
         s11.setIcon(new javax.swing.ImageIcon("/home/vasan12sp/Desktop/seat1.png")); // NOI18N
         s11.setText("11");
+        getContentPane().add(s11, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 256, -1, -1));
 
         s12.setIcon(new javax.swing.ImageIcon("/home/vasan12sp/Desktop/seat1.png")); // NOI18N
         s12.setText("12");
+        getContentPane().add(s12, new org.netbeans.lib.awtextra.AbsoluteConstraints(133, 256, -1, -1));
 
         s13.setIcon(new javax.swing.ImageIcon("/home/vasan12sp/Desktop/seat1.png")); // NOI18N
         s13.setText("13");
+        getContentPane().add(s13, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 303, -1, -1));
 
         s14.setIcon(new javax.swing.ImageIcon("/home/vasan12sp/Desktop/seat1.png")); // NOI18N
         s14.setText("14");
+        getContentPane().add(s14, new org.netbeans.lib.awtextra.AbsoluteConstraints(129, 303, -1, -1));
 
         s15.setIcon(new javax.swing.ImageIcon("/home/vasan12sp/Desktop/seat1.png")); // NOI18N
         s15.setText("15");
+        getContentPane().add(s15, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 350, -1, -1));
 
         s16.setIcon(new javax.swing.ImageIcon("/home/vasan12sp/Desktop/seat1.png")); // NOI18N
         s16.setText("16");
+        getContentPane().add(s16, new org.netbeans.lib.awtextra.AbsoluteConstraints(129, 350, -1, -1));
 
         s17.setIcon(new javax.swing.ImageIcon("/home/vasan12sp/Desktop/seat1.png")); // NOI18N
         s17.setText("17");
+        getContentPane().add(s17, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 397, -1, -1));
 
         s18.setIcon(new javax.swing.ImageIcon("/home/vasan12sp/Desktop/seat1.png")); // NOI18N
         s18.setText("18");
+        getContentPane().add(s18, new org.netbeans.lib.awtextra.AbsoluteConstraints(129, 397, -1, -1));
 
         s33.setIcon(new javax.swing.ImageIcon("/home/vasan12sp/Desktop/seat1.png")); // NOI18N
         s33.setText("33");
+        getContentPane().add(s33, new org.netbeans.lib.awtextra.AbsoluteConstraints(273, 21, -1, -1));
 
         s19.setIcon(new javax.swing.ImageIcon("/home/vasan12sp/Desktop/seat1.png")); // NOI18N
         s19.setText("19");
+        getContentPane().add(s19, new org.netbeans.lib.awtextra.AbsoluteConstraints(29, 444, -1, -1));
 
         s21.setIcon(new javax.swing.ImageIcon("/home/vasan12sp/Desktop/seat1.png")); // NOI18N
         s21.setText("21");
+        getContentPane().add(s21, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 491, -1, -1));
 
         s22.setIcon(new javax.swing.ImageIcon("/home/vasan12sp/Desktop/seat1.png")); // NOI18N
         s22.setText("22");
+        getContentPane().add(s22, new org.netbeans.lib.awtextra.AbsoluteConstraints(129, 491, -1, -1));
 
         s24.setIcon(new javax.swing.ImageIcon("/home/vasan12sp/Desktop/seat1.png")); // NOI18N
         s24.setText("24");
+        getContentPane().add(s24, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 538, -1, -1));
 
         s23.setIcon(new javax.swing.ImageIcon("/home/vasan12sp/Desktop/seat1.png")); // NOI18N
         s23.setText("23");
+        getContentPane().add(s23, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 538, -1, -1));
 
         s27.setIcon(new javax.swing.ImageIcon("/home/vasan12sp/Desktop/seat1.png")); // NOI18N
         s27.setText("27");
+        getContentPane().add(s27, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 632, -1, -1));
 
         s3.setIcon(new javax.swing.ImageIcon("/home/vasan12sp/Desktop/seat1.png")); // NOI18N
         s3.setText("03");
+        getContentPane().add(s3, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 68, -1, -1));
 
         s4.setIcon(new javax.swing.ImageIcon("/home/vasan12sp/Desktop/seat1.png")); // NOI18N
         s4.setText("04");
+        getContentPane().add(s4, new org.netbeans.lib.awtextra.AbsoluteConstraints(131, 68, -1, -1));
 
         s25.setIcon(new javax.swing.ImageIcon("/home/vasan12sp/Desktop/seat1.png")); // NOI18N
         s25.setText("25");
+        getContentPane().add(s25, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 585, -1, -1));
 
         s1.setIcon(new javax.swing.ImageIcon("/home/vasan12sp/Desktop/seat1.png")); // NOI18N
         s1.setText("01");
+        getContentPane().add(s1, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 21, -1, -1));
 
         s2.setIcon(new javax.swing.ImageIcon("/home/vasan12sp/Desktop/seat1.png")); // NOI18N
         s2.setText("02");
+        getContentPane().add(s2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 21, -1, -1));
 
         s26.setIcon(new javax.swing.ImageIcon("/home/vasan12sp/Desktop/seat1.png")); // NOI18N
         s26.setText("26");
+        getContentPane().add(s26, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 585, -1, -1));
 
         s28.setIcon(new javax.swing.ImageIcon("/home/vasan12sp/Desktop/seat1.png")); // NOI18N
         s28.setText("28");
+        getContentPane().add(s28, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 632, -1, -1));
 
         s29.setIcon(new javax.swing.ImageIcon("/home/vasan12sp/Desktop/seat1.png")); // NOI18N
         s29.setText("29");
+        getContentPane().add(s29, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 679, -1, -1));
 
         s30.setIcon(new javax.swing.ImageIcon("/home/vasan12sp/Desktop/seat1.png")); // NOI18N
         s30.setText("30");
+        getContentPane().add(s30, new org.netbeans.lib.awtextra.AbsoluteConstraints(131, 679, -1, -1));
 
         s20.setIcon(new javax.swing.ImageIcon("/home/vasan12sp/Desktop/seat1.png")); // NOI18N
         s20.setText("20");
+        getContentPane().add(s20, new org.netbeans.lib.awtextra.AbsoluteConstraints(126, 444, -1, -1));
 
         s32.setIcon(new javax.swing.ImageIcon("/home/vasan12sp/Desktop/seat1.png")); // NOI18N
         s32.setText("32");
+        getContentPane().add(s32, new org.netbeans.lib.awtextra.AbsoluteConstraints(376, 21, -1, -1));
 
         s31.setIcon(new javax.swing.ImageIcon("/home/vasan12sp/Desktop/seat1.png")); // NOI18N
         s31.setText("31");
+        getContentPane().add(s31, new org.netbeans.lib.awtextra.AbsoluteConstraints(479, 21, -1, -1));
 
         s36.setIcon(new javax.swing.ImageIcon("/home/vasan12sp/Desktop/seat1.png")); // NOI18N
         s36.setText("36");
+        getContentPane().add(s36, new org.netbeans.lib.awtextra.AbsoluteConstraints(273, 68, -1, -1));
 
         s39.setIcon(new javax.swing.ImageIcon("/home/vasan12sp/Desktop/seat1.png")); // NOI18N
         s39.setText("39");
+        getContentPane().add(s39, new org.netbeans.lib.awtextra.AbsoluteConstraints(273, 115, -1, -1));
 
         s45.setIcon(new javax.swing.ImageIcon("/home/vasan12sp/Desktop/seat1.png")); // NOI18N
         s45.setText("45");
+        getContentPane().add(s45, new org.netbeans.lib.awtextra.AbsoluteConstraints(273, 209, -1, -1));
 
         s42.setIcon(new javax.swing.ImageIcon("/home/vasan12sp/Desktop/seat1.png")); // NOI18N
         s42.setText("42");
+        getContentPane().add(s42, new org.netbeans.lib.awtextra.AbsoluteConstraints(273, 162, -1, -1));
 
         s48.setIcon(new javax.swing.ImageIcon("/home/vasan12sp/Desktop/seat1.png")); // NOI18N
         s48.setText("48");
+        getContentPane().add(s48, new org.netbeans.lib.awtextra.AbsoluteConstraints(273, 256, -1, -1));
 
         s51.setIcon(new javax.swing.ImageIcon("/home/vasan12sp/Desktop/seat1.png")); // NOI18N
         s51.setText("51");
+        getContentPane().add(s51, new org.netbeans.lib.awtextra.AbsoluteConstraints(273, 303, -1, -1));
 
         s54.setIcon(new javax.swing.ImageIcon("/home/vasan12sp/Desktop/seat1.png")); // NOI18N
         s54.setText("54");
+        getContentPane().add(s54, new org.netbeans.lib.awtextra.AbsoluteConstraints(273, 350, -1, -1));
 
         s57.setIcon(new javax.swing.ImageIcon("/home/vasan12sp/Desktop/seat1.png")); // NOI18N
         s57.setText("57");
+        getContentPane().add(s57, new org.netbeans.lib.awtextra.AbsoluteConstraints(273, 397, -1, -1));
 
         s60.setIcon(new javax.swing.ImageIcon("/home/vasan12sp/Desktop/seat1.png")); // NOI18N
         s60.setText("60");
+        getContentPane().add(s60, new org.netbeans.lib.awtextra.AbsoluteConstraints(273, 444, -1, -1));
 
         s63.setIcon(new javax.swing.ImageIcon("/home/vasan12sp/Desktop/seat1.png")); // NOI18N
         s63.setText("63");
+        getContentPane().add(s63, new org.netbeans.lib.awtextra.AbsoluteConstraints(273, 491, -1, -1));
 
         s66.setIcon(new javax.swing.ImageIcon("/home/vasan12sp/Desktop/seat1.png")); // NOI18N
         s66.setText("66");
+        getContentPane().add(s66, new org.netbeans.lib.awtextra.AbsoluteConstraints(273, 538, -1, -1));
 
         s69.setIcon(new javax.swing.ImageIcon("/home/vasan12sp/Desktop/seat1.png")); // NOI18N
         s69.setText("69");
+        getContentPane().add(s69, new org.netbeans.lib.awtextra.AbsoluteConstraints(273, 585, -1, -1));
 
         s72.setIcon(new javax.swing.ImageIcon("/home/vasan12sp/Desktop/seat1.png")); // NOI18N
         s72.setText("72");
+        getContentPane().add(s72, new org.netbeans.lib.awtextra.AbsoluteConstraints(273, 632, -1, -1));
 
         s75.setIcon(new javax.swing.ImageIcon("/home/vasan12sp/Desktop/seat1.png")); // NOI18N
         s75.setText("75");
+        getContentPane().add(s75, new org.netbeans.lib.awtextra.AbsoluteConstraints(273, 679, -1, -1));
 
         s35.setIcon(new javax.swing.ImageIcon("/home/vasan12sp/Desktop/seat1.png")); // NOI18N
         s35.setText("35");
+        getContentPane().add(s35, new org.netbeans.lib.awtextra.AbsoluteConstraints(377, 68, -1, -1));
 
         s38.setIcon(new javax.swing.ImageIcon("/home/vasan12sp/Desktop/seat1.png")); // NOI18N
         s38.setText("38");
+        getContentPane().add(s38, new org.netbeans.lib.awtextra.AbsoluteConstraints(377, 115, -1, -1));
 
         s41.setIcon(new javax.swing.ImageIcon("/home/vasan12sp/Desktop/seat1.png")); // NOI18N
         s41.setText("41");
+        getContentPane().add(s41, new org.netbeans.lib.awtextra.AbsoluteConstraints(377, 162, -1, -1));
 
         s44.setIcon(new javax.swing.ImageIcon("/home/vasan12sp/Desktop/seat1.png")); // NOI18N
         s44.setText("44");
+        getContentPane().add(s44, new org.netbeans.lib.awtextra.AbsoluteConstraints(377, 209, -1, -1));
 
         s47.setIcon(new javax.swing.ImageIcon("/home/vasan12sp/Desktop/seat1.png")); // NOI18N
         s47.setText("47");
+        getContentPane().add(s47, new org.netbeans.lib.awtextra.AbsoluteConstraints(378, 256, -1, -1));
 
         s50.setIcon(new javax.swing.ImageIcon("/home/vasan12sp/Desktop/seat1.png")); // NOI18N
         s50.setText("50");
+        getContentPane().add(s50, new org.netbeans.lib.awtextra.AbsoluteConstraints(375, 303, -1, -1));
 
         s53.setIcon(new javax.swing.ImageIcon("/home/vasan12sp/Desktop/seat1.png")); // NOI18N
         s53.setText("53");
+        getContentPane().add(s53, new org.netbeans.lib.awtextra.AbsoluteConstraints(377, 350, -1, -1));
 
         s56.setIcon(new javax.swing.ImageIcon("/home/vasan12sp/Desktop/seat1.png")); // NOI18N
         s56.setText("56");
+        getContentPane().add(s56, new org.netbeans.lib.awtextra.AbsoluteConstraints(376, 397, -1, -1));
 
         s59.setIcon(new javax.swing.ImageIcon("/home/vasan12sp/Desktop/seat1.png")); // NOI18N
         s59.setText("59");
+        getContentPane().add(s59, new org.netbeans.lib.awtextra.AbsoluteConstraints(378, 444, -1, -1));
 
         s62.setIcon(new javax.swing.ImageIcon("/home/vasan12sp/Desktop/seat1.png")); // NOI18N
         s62.setText("62");
+        getContentPane().add(s62, new org.netbeans.lib.awtextra.AbsoluteConstraints(377, 491, -1, -1));
 
         s65.setIcon(new javax.swing.ImageIcon("/home/vasan12sp/Desktop/seat1.png")); // NOI18N
         s65.setText("65");
+        getContentPane().add(s65, new org.netbeans.lib.awtextra.AbsoluteConstraints(378, 538, -1, -1));
 
         s58.setIcon(new javax.swing.ImageIcon("/home/vasan12sp/Desktop/seat1.png")); // NOI18N
         s58.setText("58");
+        getContentPane().add(s58, new org.netbeans.lib.awtextra.AbsoluteConstraints(482, 444, -1, -1));
 
         s55.setIcon(new javax.swing.ImageIcon("/home/vasan12sp/Desktop/seat1.png")); // NOI18N
         s55.setText("55");
+        getContentPane().add(s55, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 397, -1, -1));
 
         s64.setIcon(new javax.swing.ImageIcon("/home/vasan12sp/Desktop/seat1.png")); // NOI18N
         s64.setText("64");
+        getContentPane().add(s64, new org.netbeans.lib.awtextra.AbsoluteConstraints(482, 538, -1, -1));
 
         s61.setIcon(new javax.swing.ImageIcon("/home/vasan12sp/Desktop/seat1.png")); // NOI18N
         s61.setText("61");
+        getContentPane().add(s61, new org.netbeans.lib.awtextra.AbsoluteConstraints(481, 491, -1, -1));
 
         s70.setIcon(new javax.swing.ImageIcon("/home/vasan12sp/Desktop/seat1.png")); // NOI18N
         s70.setText("70");
+        getContentPane().add(s70, new org.netbeans.lib.awtextra.AbsoluteConstraints(478, 632, -1, -1));
 
         s67.setIcon(new javax.swing.ImageIcon("/home/vasan12sp/Desktop/seat1.png")); // NOI18N
         s67.setText("67");
+        getContentPane().add(s67, new org.netbeans.lib.awtextra.AbsoluteConstraints(483, 585, -1, -1));
 
         s73.setIcon(new javax.swing.ImageIcon("/home/vasan12sp/Desktop/seat1.png")); // NOI18N
         s73.setText("73");
+        getContentPane().add(s73, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 679, -1, -1));
 
         s74.setIcon(new javax.swing.ImageIcon("/home/vasan12sp/Desktop/seat1.png")); // NOI18N
         s74.setText("74");
+        getContentPane().add(s74, new org.netbeans.lib.awtextra.AbsoluteConstraints(376, 679, -1, -1));
 
         s68.setIcon(new javax.swing.ImageIcon("/home/vasan12sp/Desktop/seat1.png")); // NOI18N
         s68.setText("68");
+        getContentPane().add(s68, new org.netbeans.lib.awtextra.AbsoluteConstraints(378, 585, -1, -1));
 
         s71.setIcon(new javax.swing.ImageIcon("/home/vasan12sp/Desktop/seat1.png")); // NOI18N
         s71.setText("71");
+        getContentPane().add(s71, new org.netbeans.lib.awtextra.AbsoluteConstraints(376, 632, -1, -1));
 
         s52.setIcon(new javax.swing.ImageIcon("/home/vasan12sp/Desktop/seat1.png")); // NOI18N
         s52.setText("52");
+        getContentPane().add(s52, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 350, -1, -1));
 
         s34.setIcon(new javax.swing.ImageIcon("/home/vasan12sp/Desktop/seat1.png")); // NOI18N
         s34.setText("34");
+        getContentPane().add(s34, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 68, -1, -1));
 
         s37.setIcon(new javax.swing.ImageIcon("/home/vasan12sp/Desktop/seat1.png")); // NOI18N
         s37.setText("37");
+        getContentPane().add(s37, new org.netbeans.lib.awtextra.AbsoluteConstraints(481, 115, -1, -1));
 
         s40.setIcon(new javax.swing.ImageIcon("/home/vasan12sp/Desktop/seat1.png")); // NOI18N
         s40.setText("40");
+        getContentPane().add(s40, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 162, -1, -1));
 
         s43.setIcon(new javax.swing.ImageIcon("/home/vasan12sp/Desktop/seat1.png")); // NOI18N
         s43.setText("43");
+        getContentPane().add(s43, new org.netbeans.lib.awtextra.AbsoluteConstraints(482, 209, -1, -1));
 
         s46.setIcon(new javax.swing.ImageIcon("/home/vasan12sp/Desktop/seat1.png")); // NOI18N
         s46.setText("46");
+        getContentPane().add(s46, new org.netbeans.lib.awtextra.AbsoluteConstraints(482, 256, -1, -1));
 
         s49.setIcon(new javax.swing.ImageIcon("/home/vasan12sp/Desktop/seat1.png")); // NOI18N
         s49.setText("49");
+        getContentPane().add(s49, new org.netbeans.lib.awtextra.AbsoluteConstraints(479, 303, -1, -1));
 
+        jButton1.setBackground(new java.awt.Color(0, 51, 51));
         jButton1.setFont(new java.awt.Font("Cantarell", 1, 24)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(102, 255, 255));
         jButton1.setText("CONTINUE");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(117, 738, -1, -1));
 
+        jButton2.setBackground(new java.awt.Color(0, 51, 51));
         jButton2.setFont(new java.awt.Font("Cantarell", 1, 24)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(102, 255, 255));
         jButton2.setText("CANCEL");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(338, 738, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(s1)
-                        .addGap(18, 18, 18)
-                        .addComponent(s2))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(s23)
-                        .addGap(18, 18, 18)
-                        .addComponent(s24))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(s3)
-                        .addGap(18, 18, 18)
-                        .addComponent(s4))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(s21)
-                        .addGap(18, 18, 18)
-                        .addComponent(s22))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(s17)
-                            .addGap(18, 18, 18)
-                            .addComponent(s18))
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(s15)
-                            .addGap(18, 18, 18)
-                            .addComponent(s16))
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(s13)
-                            .addGap(18, 18, 18)
-                            .addComponent(s14))
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(s7)
-                            .addGap(18, 18, 18)
-                            .addComponent(s8))
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(s5)
-                            .addGap(18, 18, 18)
-                            .addComponent(s6))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                            .addComponent(s19)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(s20)
-                            .addGap(6, 6, 6))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(s11)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(s12))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(s9)
-                                .addGap(18, 18, 18)
-                                .addComponent(s10))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(s25)
-                        .addGap(18, 18, 18)
-                        .addComponent(s26))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(s27)
-                        .addGap(18, 18, 18)
-                        .addComponent(s28))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(s29)
-                        .addGap(18, 18, 18)
-                        .addComponent(s30)))
-                .addGap(55, 55, 55)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(s72)
-                                .addGap(18, 18, 18)
-                                .addComponent(s71)
-                                .addGap(18, 18, 18)
-                                .addComponent(s70))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(s69)
-                                .addGap(18, 18, 18)
-                                .addComponent(s68)
-                                .addGap(18, 18, 18)
-                                .addComponent(s67))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(s36)
-                                .addGap(18, 18, 18)
-                                .addComponent(s35)
-                                .addGap(18, 18, 18)
-                                .addComponent(s34))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(s33)
-                                .addGap(18, 18, 18)
-                                .addComponent(s32)
-                                .addGap(18, 18, 18)
-                                .addComponent(s31))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(s39)
-                                .addGap(18, 18, 18)
-                                .addComponent(s38)
-                                .addGap(18, 18, 18)
-                                .addComponent(s37))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(s42)
-                                .addGap(18, 18, 18)
-                                .addComponent(s41)
-                                .addGap(18, 18, 18)
-                                .addComponent(s40))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(s45)
-                                .addGap(18, 18, 18)
-                                .addComponent(s44)
-                                .addGap(18, 18, 18)
-                                .addComponent(s43))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(s48)
-                                .addGap(18, 18, 18)
-                                .addComponent(s47)
-                                .addGap(18, 18, 18)
-                                .addComponent(s46))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(s51)
-                                .addGap(18, 18, 18)
-                                .addComponent(s50)
-                                .addGap(18, 18, 18)
-                                .addComponent(s49))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(s57)
-                                .addGap(18, 18, 18)
-                                .addComponent(s56)
-                                .addGap(18, 18, 18)
-                                .addComponent(s55))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(s60)
-                                .addGap(18, 18, 18)
-                                .addComponent(s59)
-                                .addGap(18, 18, 18)
-                                .addComponent(s58))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(s63)
-                                .addGap(18, 18, 18)
-                                .addComponent(s62)
-                                .addGap(18, 18, 18)
-                                .addComponent(s61))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(s66)
-                                .addGap(18, 18, 18)
-                                .addComponent(s65)
-                                .addGap(18, 18, 18)
-                                .addComponent(s64))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jButton2)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(s75)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(s74)))
-                                .addGap(18, 18, 18)
-                                .addComponent(s73)))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(s54)
-                        .addGap(18, 18, 18)
-                        .addComponent(s53)
-                        .addGap(18, 18, 18)
-                        .addComponent(s52)
-                        .addContainerGap(25, Short.MAX_VALUE))))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(117, 117, 117)
-                .addComponent(jButton1)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(s1)
-                            .addComponent(s2)
-                            .addComponent(s33)
-                            .addComponent(s32)
-                            .addComponent(s31))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(s3)
-                                    .addComponent(s4))
-                                .addComponent(s35, javax.swing.GroupLayout.Alignment.TRAILING))
-                            .addComponent(s34)))
-                    .addComponent(s36))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(s6)
-                    .addComponent(s5)
-                    .addComponent(s39)
-                    .addComponent(s38)
-                    .addComponent(s37))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(s7)
-                            .addComponent(s8)
-                            .addComponent(s42)
-                            .addComponent(s41))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(s10)
-                                    .addComponent(s9)
-                                    .addComponent(s45)
-                                    .addComponent(s44))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                                .addComponent(s11)
-                                                .addComponent(s12))
-                                            .addComponent(s48)
-                                            .addComponent(s47))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                                        .addComponent(s13)
-                                                        .addComponent(s14))
-                                                    .addComponent(s51)
-                                                    .addComponent(s50))
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addGroup(layout.createSequentialGroup()
-                                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                                .addComponent(s16)
-                                                                .addComponent(s15, javax.swing.GroupLayout.Alignment.TRAILING))
-                                                            .addComponent(s54)
-                                                            .addComponent(s53))
-                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                            .addGroup(layout.createSequentialGroup()
-                                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                                    .addComponent(s17)
-                                                                    .addComponent(s18)
-                                                                    .addComponent(s57)
-                                                                    .addComponent(s56))
-                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                                    .addGroup(layout.createSequentialGroup()
-                                                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                                                                .addComponent(s19)
-                                                                                .addComponent(s20))
-                                                                            .addComponent(s60)
-                                                                            .addComponent(s59))
-                                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                                            .addGroup(layout.createSequentialGroup()
-                                                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                                                        .addComponent(s21)
-                                                                                        .addComponent(s22))
-                                                                                    .addComponent(s63)
-                                                                                    .addComponent(s62))
-                                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                                                    .addGroup(layout.createSequentialGroup()
-                                                                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                                                            .addComponent(s23)
-                                                                                            .addComponent(s24)
-                                                                                            .addComponent(s66)
-                                                                                            .addComponent(s65))
-                                                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                                                            .addGroup(layout.createSequentialGroup()
-                                                                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                                                                    .addComponent(s25)
-                                                                                                    .addComponent(s26)
-                                                                                                    .addComponent(s69)
-                                                                                                    .addComponent(s68))
-                                                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                                                                    .addGroup(layout.createSequentialGroup()
-                                                                                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                                                                            .addComponent(s27)
-                                                                                                            .addComponent(s28)
-                                                                                                            .addComponent(s72)
-                                                                                                            .addComponent(s71))
-                                                                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                                                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                                                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                                                                                .addComponent(s29)
-                                                                                                                .addComponent(s30))
-                                                                                                            .addComponent(s75)
-                                                                                                            .addComponent(s74)
-                                                                                                            .addComponent(s73)))
-                                                                                                    .addComponent(s70)))
-                                                                                            .addComponent(s67)))
-                                                                                    .addComponent(s64)))
-                                                                            .addComponent(s61)))
-                                                                    .addComponent(s58)))
-                                                            .addComponent(s55)))
-                                                    .addComponent(s52)))
-                                            .addComponent(s49)))
-                                    .addComponent(s46)))
-                            .addComponent(s43)))
-                    .addComponent(s40))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
-                .addContainerGap(15, Short.MAX_VALUE))
-        );
+        jLabel1.setIcon(new javax.swing.ImageIcon("/home/vasan12sp/Desktop/solid6.jpg")); // NOI18N
+        jLabel1.setText("jLabel1");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, 620, 800));
 
         pack();
         setLocationRelativeTo(null);
@@ -931,6 +697,7 @@ case 57: mw1(s57);case 58: mw1(s58);case 59: mw1(s59);case 60: mw1(s60);case 61:
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JButton s1;
     private javax.swing.JButton s10;
     private javax.swing.JButton s11;
